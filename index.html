@@ -1,0 +1,2375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>237WebStudio — Des sites qui vendent | Cameroun</title>
+<meta name="description" content="237WebStudio transforme votre page Facebook en boutique WhatsApp. Sites pour boutiques, salons, restaurants et magasins partout au Cameroun. À partir de 15 000 XAF." />
+<meta name="theme-color" content="#064E3B" />
+<meta property="og:title" content="237WebStudio — Des sites qui vendent" />
+<meta property="og:description" content="Votre page Facebook devient une boutique WhatsApp. Livraison 2-3 jours partout au Cameroun." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        brand: { 50:'#ECFDF5',100:'#D1FAE5',200:'#A7F3D0',300:'#6EE7B7',400:'#34D399',500:'#10B981',600:'#0B6E4F',700:'#065F46',800:'#064E3B',900:'#022C22' },
+        gold:  { 300:'#FCD34D',400:'#F2C14E',500:'#EAB308',600:'#CA8A04' },
+        ink:   { 900:'#0A0A0A',800:'#111111',700:'#1A1A1A',600:'#262626' }
+      },
+      fontFamily: {
+        sans: ['Inter','system-ui','sans-serif'],
+        display: ['"Space Grotesk"','Inter','sans-serif']
+      }
+    }
+  }
+}
+</script>
+
+<style>
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background: #0A0A0A; color: #F5F5F5;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: #0B6E4F; color: #fff; }
+:focus-visible { outline: 2px solid #10B981; outline-offset: 2px; border-radius: 8px; }
+img { max-width: 100%; height: auto; display: block; }
+
+@media (max-width: 640px) {
+  input, select, textarea, button { font-size: 16px !important; }
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0A0A0A; }
+::-webkit-scrollbar-thumb { background: #0B6E4F; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #10B981; }
+
+#scroll-progress {
+  position: fixed; top: 0; left: 0; height: 3px; z-index: 60;
+  background: linear-gradient(90deg, #10B981, #F2C14E, #10B981);
+  background-size: 200% auto;
+  width: 0;
+  animation: gradientSweep 4s linear infinite;
+  transition: width .1s linear;
+  box-shadow: 0 0 12px rgba(16,185,129,.6);
+  will-change: width;
+}
+
+@keyframes gradientSweep { 0% { background-position: 0% 50%; } 100% { background-position: 300% 50%; } }
+
+.logo-wrap { display: inline-flex; align-items: center; gap: .5rem; text-decoration: none; line-height: 1; transition: transform .3s ease; }
+.logo-wrap:hover { transform: translateY(-1px); }
+
+.logo-237 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(100deg,#10B981 0%,#34D399 20%,#F2C14E 40%,#10B981 60%,#34D399 80%,#F2C14E 100%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientSweep 5s linear infinite;
+}
+.logo-wrap:hover .logo-237 { filter: brightness(1.15); }
+
+.logo-word span { display: inline-block; opacity: 0; transform: translateY(8px); animation: letterIn .45s cubic-bezier(.22,1,.36,1) forwards; }
+@keyframes letterIn { to { opacity: 1; transform: translateY(0); } }
+.logo-word span:nth-child(1) { animation-delay: .25s; }
+.logo-word span:nth-child(2) { animation-delay: .32s; }
+.logo-word span:nth-child(3) { animation-delay: .39s; }
+.logo-word span:nth-child(4) { animation-delay: .46s; }
+.logo-word span:nth-child(5) { animation-delay: .53s; }
+.logo-word span:nth-child(6) { animation-delay: .60s; }
+.logo-word span:nth-child(7) { animation-delay: .67s; }
+.logo-word span:nth-child(8) { animation-delay: .74s; }
+.logo-word span:nth-child(9) { animation-delay: .81s; }
+
+.logo-cursor { display: inline-block; width: 2px; height: 1em; background: #F2C14E; margin-left: 2px; vertical-align: -0.12em; animation: blink 1.1s steps(2, start) infinite; }
+@keyframes blink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+
+.logo-underline { display: block; height: 2px; background: linear-gradient(90deg,#10B981,#F2C14E,transparent); transform-origin: left; transform: scaleX(0); animation: drawLine 1.1s .5s cubic-bezier(.22,1,.36,1) forwards; border-radius: 2px; }
+@keyframes drawLine { to { transform: scaleX(1); } }
+
+@keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+.float-slow { animation: floatY 6s ease-in-out infinite; }
+.float-med  { animation: floatY 4.5s ease-in-out infinite; }
+.float-fast { animation: floatY 3.5s ease-in-out infinite; }
+
+@keyframes blobMove {
+  0%,100% { transform: translate(0,0) scale(1); }
+  33% { transform: translate(40px,-30px) scale(1.08); }
+  66% { transform: translate(-30px,20px) scale(.95); }
+}
+.blob { animation: blobMove 18s ease-in-out infinite; will-change: transform; }
+
+.grad-text {
+  background: linear-gradient(120deg,#34D399 0%,#F2C14E 50%,#34D399 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientSweep 6s linear infinite;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(16,185,129,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16,185,129,.055) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: .08s; }
+.reveal-d2 { transition-delay: .16s; }
+.reveal-d3 { transition-delay: .24s; }
+.reveal-d4 { transition-delay: .32s; }
+
+.marquee-track { display: flex; width: max-content; animation: marquee 42s linear infinite; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+.glass {
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.glass-strong {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glow-card { transition: transform .35s cubic-bezier(.22,1,.36,1), border-color .35s ease, box-shadow .35s ease; }
+.glow-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(16,185,129,.45);
+  box-shadow: 0 18px 50px -18px rgba(16,185,129,.4);
+}
+
+@keyframes pulseRing { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(1.9); opacity: 0; } }
+.pulse-ring::before {
+  content: ''; position: absolute; inset: 0; border-radius: 9999px;
+  background: #25D366; animation: pulseRing 2s ease-out infinite; z-index: -1;
+}
+
+.tab-btn.active { background: #0B6E4F; color: #fff; border-color: #0B6E4F; box-shadow: 0 8px 24px -8px rgba(11,110,79,.6); }
+
+.lang-switcher {
+  position: relative; display: inline-flex; align-items: center;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 999px; padding: 3px; gap: 2px;
+}
+.lang-pill {
+  position: absolute; top: 3px; bottom: 3px; left: 3px; width: calc(50% - 3px);
+  background: linear-gradient(135deg,#0B6E4F,#10B981);
+  border-radius: 999px;
+  transition: left .35s cubic-bezier(.22,1,.36,1);
+  z-index: 0;
+}
+.lang-switcher[data-lang="en"] .lang-pill { left: 50%; }
+.lang-btn { position: relative; z-index: 1; padding: 6px 12px; font-size: 12px; font-weight: 600; border-radius: 999px; color: #9CA3AF; transition: color .3s ease; cursor: pointer; background: transparent; border: none; }
+.lang-btn.active { color: #fff; }
+
+.form-input {
+  width: 100%; padding: 14px 16px; border-radius: 12px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  color: #fff; font-size: 16px; transition: all .25s ease;
+}
+.form-input::placeholder { color: #52525B; }
+.form-input:focus { outline: none; border-color: rgba(16,185,129,.55); background: rgba(255,255,255,.07); box-shadow: 0 0 0 4px rgba(16,185,129,.10); }
+
+.btn-shine { position: relative; overflow: hidden; }
+.btn-shine::after {
+  content: ''; position: absolute; top: 0; left: -120%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
+  transform: skewX(-20deg); transition: left .65s ease;
+}
+.btn-shine:hover::after { left: 140%; }
+
+.star-filled { color: #F2C14E; }
+.star-empty { color: #374151; }
+
+[x-cloak] { display: none !important; }
+
+select.form-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 16px center; padding-right: 44px;
+}
+select.form-input option { background: #1A1A1A; color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .blob, .float-slow, .float-med, .float-fast,
+  .logo-237, .logo-cursor, .logo-word span, .logo-underline,
+  .grad-text, .marquee-track, #scroll-progress { animation: none !important; }
+}
+/* ==========================================================
+   ORDER FLOW ANIMATION — pure CSS, 12s loop
+   ========================================================== */
+.flow-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 7vw, 90px);
+  max-width: 820px;
+  margin: 0 auto;
+  min-height: 480px;
+}
+
+.flow-phone {
+  position: relative;
+  width: clamp(130px, 22vw, 230px);
+  aspect-ratio: 9 / 19;
+  border-radius: 30px;
+  border: 7px solid #1A1A1A;
+  background: #0A0A0A;
+  box-shadow:
+    0 40px 80px -30px rgba(0,0,0,.9),
+    0 0 0 1px rgba(255,255,255,.05),
+    0 0 60px -20px rgba(16,185,129,.15);
+  overflow: visible;
+  z-index: 2;
+}
+.flow-phone-left  { animation: flowBobLeft 12s ease-in-out infinite; }
+.flow-phone-right { animation: flowBobRight 12s ease-in-out infinite; }
+
+@keyframes flowBobLeft {
+  0%, 100% { transform: rotate(-4deg) translateY(0); }
+  50%      { transform: rotate(-3deg) translateY(-8px); }
+}
+@keyframes flowBobRight {
+  0%, 100% { transform: rotate(4deg) translateY(0); }
+  50%      { transform: rotate(3deg) translateY(-8px); }
+}
+
+.flow-notch {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 54px; height: 14px;
+  background: #1A1A1A;
+  border-radius: 0 0 12px 12px;
+  z-index: 10;
+}
+
+.flow-screen {
+  position: absolute;
+  inset: 0;
+  padding: 22px 9px 9px;
+  background: #0A0A0A;
+  border-radius: 22px;
+  overflow: hidden;
+}
+.flow-screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255,255,255,.02) 0px,
+    rgba(255,255,255,.02) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+/* ---- Product card ---- */
+.flow-product {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #141414;
+  border: 1px solid rgba(255,255,255,.06);
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 2;
+}
+.flow-product img {
+  width: 100%;
+  height: clamp(55px, 9vw, 90px);
+  object-fit: cover;
+}
+.flow-product-info { padding: 7px 8px 9px; }
+.flow-product-title { font-size: clamp(9px, 1.3vw, 11px); color: #fff; font-weight: 600; line-height: 1.1; }
+.flow-product-price { font-size: clamp(10px, 1.5vw, 12px); color: #34D399; font-weight: 700; margin-top: 3px; }
+
+/* ---- Order button ---- */
+.flow-order-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: clamp(7px, 1.2vw, 10px) 10px;
+  border-radius: 10px;
+  background: #25D366;
+  color: #fff;
+  font-size: clamp(9px, 1.3vw, 11px);
+  font-weight: 700;
+  overflow: hidden;
+  box-shadow: 0 6px 18px -6px rgba(37,211,102,.5);
+  animation: flowBtnPulse 12s ease-in-out infinite;
+  z-index: 2;
+}
+.flow-order-btn svg { width: 11px; height: 11px; }
+@keyframes flowBtnPulse {
+  0%, 13% { transform: scale(1);   box-shadow: 0 6px 18px -6px rgba(37,211,102,.5); }
+  17%     { transform: scale(.94); box-shadow: 0 0 0 8px rgba(37,211,102,.35); }
+  22%     { transform: scale(1);   box-shadow: 0 6px 18px -6px rgba(37,211,102,.5); }
+  100%    { transform: scale(1); }
+}
+
+.flow-btn-shine {
+  position: absolute;
+  top: 0; left: -120%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+  transform: skewX(-20deg);
+  animation: flowShine 12s ease-in-out infinite;
+}
+@keyframes flowShine {
+  0%, 14% { left: -120%; }
+  19%     { left: 140%; }
+  100%    { left: -120%; }
+}
+
+/* ---- Tap finger ---- */
+.flow-tap {
+  position: absolute;
+  right: 42%;
+  bottom: 34%;
+  width: 26px; height: 26px;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,.6));
+  animation: flowTap 12s ease-in-out infinite;
+  z-index: 3;
+}
+.flow-tap svg { width: 100%; height: 100%; }
+.flow-tap-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(37,211,102,.7);
+  opacity: 0;
+  animation: flowTapRing 12s ease-out infinite;
+}
+@keyframes flowTap {
+  0%, 4%   { opacity: 0; transform: scale(1.4) translateY(8px); }
+  7%       { opacity: 1; transform: scale(1) translateY(0); }
+  13%      { opacity: 1; transform: scale(1) translateY(0); }
+  16%      { opacity: 1; transform: scale(.85) translateY(2px); }
+  19%      { opacity: 1; transform: scale(1) translateY(0); }
+  24%,100% { opacity: 0; transform: scale(1) translateY(0); }
+}
+@keyframes flowTapRing {
+  0%, 7%  { transform: scale(.4);  opacity: 0; }
+  8%      { transform: scale(.4);  opacity: 1; }
+  14%     { transform: scale(1.9); opacity: 0; }
+  100%    { opacity: 0; }
+}
+
+/* ---- Flying message bubble ---- */
+.flow-flying {
+  position: absolute;
+  top: 38%;
+  left: 30%;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  animation: flowFlight 12s ease-in-out infinite;
+}
+.flow-flying-bubble {
+  position: relative;
+  width: 74px;
+  padding: 7px 9px;
+  border-radius: 12px 12px 12px 3px;
+  background: linear-gradient(135deg, #25D366, #1FA855);
+  box-shadow:
+    0 12px 32px -8px rgba(37,211,102,.7),
+    0 0 0 1px rgba(255,255,255,.1) inset;
+}
+.flow-line {
+  display: block;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,.9);
+  margin-bottom: 4px;
+}
+.flow-line.short { width: 55%; margin-bottom: 0; }
+.flow-flying-trail {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 40px;
+  height: 2px;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, transparent, rgba(37,211,102,.7));
+  border-radius: 2px;
+  opacity: .8;
+}
+@keyframes flowFlight {
+  0%, 22%  { opacity: 0; left: 30%; transform: translate(-50%, 0) scale(.4); }
+  25%      { opacity: 1; left: 32%; transform: translate(-50%, 0) scale(1); }
+  30%      { opacity: 1; left: 38%; transform: translate(-50%, -10px) scale(1); }
+  38%      { opacity: 1; left: 55%; transform: translate(-50%, -10px) scale(1); }
+  44%      { opacity: 1; left: 64%; transform: translate(-50%, 0) scale(.95); }
+  48%      { opacity: 0; left: 68%; transform: translate(-50%, 0) scale(.4); }
+  100%     { opacity: 0; left: 30%; transform: translate(-50%, 0) scale(.4); }
+}
+
+/* ---- Chat on supplier phone ---- */
+.flow-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  margin-bottom: 9px;
+  position: relative;
+  z-index: 2;
+}
+.flow-avatar {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10B981, #0B6E4F);
+  display: grid; place-items: center;
+  font-size: 9px; font-weight: 700; color: #fff;
+}
+.flow-chat-name   { font-size: clamp(8px, 1.2vw, 10px); font-weight: 600; color: #fff; line-height: 1; }
+.flow-chat-status { font-size: clamp(7px, 1vw, 8px);   color: #34D399; margin-top: 2px; }
+
+.flow-chat-msg {
+  position: relative;
+  background: #1F2937;
+  border-radius: 10px 10px 10px 3px;
+  padding: 8px 9px;
+  font-size: clamp(8px, 1.2vw, 10px);
+  color: #E5E7EB;
+  line-height: 1.35;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: flowChatIn 12s ease-out infinite;
+  z-index: 2;
+}
+@keyframes flowChatIn {
+  0%, 44%  { opacity: 0; transform: translateY(8px) scale(.9); }
+  49%      { opacity: 1; transform: translateY(0) scale(1); }
+  92%      { opacity: 1; transform: translateY(0) scale(1); }
+  97%,100% { opacity: 0; transform: translateY(8px) scale(.9); }
+}
+.flow-chat-product {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  color: #fff; font-weight: 600;
+}
+.flow-chat-price { color: #34D399; font-weight: 700; margin-top: 2px; }
+
+.flow-confirm-btn {
+  position: relative;
+  margin-top: 9px;
+  padding: 7px 8px;
+  border-radius: 8px;
+  background: rgba(37,211,102,.14);
+  border: 1px solid rgba(37,211,102,.45);
+  color: #34D399;
+  font-size: clamp(8px, 1.2vw, 10px);
+  font-weight: 700;
+  text-align: center;
+  overflow: hidden;
+  opacity: 0;
+  animation: flowConfirmBtn 12s ease-out infinite;
+  z-index: 2;
+}
+@keyframes flowConfirmBtn {
+  0%, 56%  { opacity: 0; }
+  60%      { opacity: 1; }
+  92%      { opacity: 1; }
+  97%,100% { opacity: 0; }
+}
+.flow-confirm-flash {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(37,211,102,.85), transparent 65%);
+  opacity: 0;
+  animation: flowConfirmFlash 12s ease-out infinite;
+}
+@keyframes flowConfirmFlash {
+  0%, 63% { opacity: 0; transform: scale(.6); }
+  66%     { opacity: 1; transform: scale(1); }
+  71%     { opacity: 0; transform: scale(1.5); }
+  100%    { opacity: 0; }
+}
+
+/* ---- New order badge ---- */
+.flow-new-badge {
+  position: absolute;
+  top: 18px;
+  right: -78px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #10B981, #0B6E4F);
+  color: #fff;
+  font-size: clamp(7px, 1vw, 9px);
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 10px 26px -8px rgba(16,185,129,.8);
+  opacity: 0;
+  animation: flowNewBadge 12s ease-out infinite;
+  z-index: 4;
+}
+.flow-badge-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: #fff;
+  animation: flowBadgeDot 1s ease-in-out infinite;
+}
+@keyframes flowBadgeDot {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: .3; }
+}
+@keyframes flowNewBadge {
+  0%, 46%  { opacity: 0; transform: translateY(-8px) scale(.85); }
+  50%      { opacity: 1; transform: translateY(0) scale(1); }
+  56%      { opacity: 1; transform: translateY(0) scale(1); }
+  61%,100% { opacity: 0; transform: translateY(-8px) scale(.85); }
+}
+
+/* ---- Confirmed badge ---- */
+.flow-confirmed {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #10B981, #0B6E4F);
+  color: #fff;
+  font-size: clamp(8px, 1.1vw, 10px);
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 12px 30px -8px rgba(16,185,129,.8);
+  opacity: 0;
+  animation: flowConfirmed 12s ease-out infinite;
+  z-index: 3;
+}
+.flow-confirmed svg { width: 11px; height: 11px; }
+@keyframes flowConfirmed {
+  0%, 84%  { opacity: 0; transform: translate(-50%, 14px) scale(.85); }
+  89%      { opacity: 1; transform: translate(-50%, 0) scale(1); }
+  94%      { opacity: 1; transform: translate(-50%, 0) scale(1); }
+  99%,100% { opacity: 0; transform: translate(-50%, 14px) scale(.85); }
+}
+
+/* ---- Step pills ---- */
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 8px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+}
+.flow-step-num {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, #10B981, #0B6E4F);
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 8px 20px -8px rgba(16,185,129,.7);
+}
+.flow-step-label {
+  font-size: 11px;
+  color: #9CA3AF;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ---- Mobile tuning ---- */
+@media (max-width: 480px) {
+  .flow-stage { gap: 10px; min-height: 340px; }
+  .flow-new-badge { right: -46px; top: 8px; }
+  .flow-flying-bubble { width: 54px; padding: 5px 7px; }
+  .flow-flying-trail { width: 24px; }
+  .flow-tap { width: 22px; height: 22px; right: 40%; bottom: 32%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-phone-left, .flow-phone-right, .flow-order-btn, .flow-btn-shine,
+  .flow-tap, .flow-tap-ring, .flow-flying, .flow-chat-msg,
+  .flow-confirm-btn, .flow-confirm-flash, .flow-new-badge,
+  .flow-confirmed, .flow-badge-dot {
+    animation: none !important;
+  }
+  .flow-chat-msg, .flow-confirm-btn, .flow-confirmed { opacity: 1; }
+  .flow-flying, .flow-tap, .flow-new-badge { opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- ================================================================
+     NAVBAR
+     ================================================================ -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 border-b border-transparent bg-transparent transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+
+      <a href="#home" class="logo-wrap" aria-label="237WebStudio">
+        <span class="text-2xl sm:text-3xl logo-237">237</span>
+        <span class="logo-cursor hidden sm:inline-block"></span>
+        <span class="text-base sm:text-xl font-display font-medium text-white logo-word">
+          <span>W</span><span>e</span><span>b</span><span>S</span><span>t</span><span>u</span><span>d</span><span>i</span><span>o</span>
+        </span>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-1">
+        <a href="#services" data-i18n="nav.services" class="px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">Services</a>
+        <a href="#demos" data-i18n="nav.demos" class="px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">Démos</a>
+        <a href="#process" data-i18n="nav.process" class="px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">Processus</a>
+        <a href="#pricing" data-i18n="nav.pricing" class="px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">Tarifs</a>
+        <a href="#faq" data-i18n="nav.faq" class="px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">FAQ</a>
+      </div>
+
+      <div class="hidden lg:flex items-center gap-3">
+        <div class="lang-switcher" data-lang="fr" role="group" aria-label="Language">
+          <span class="lang-pill"></span>
+          <button type="button" class="lang-btn active" data-set-lang="fr">FR</button>
+          <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+        </div>
+
+        <a href="tel:+237693149222" class="text-sm text-gray-300 hover:text-white transition flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.5 4.5a1 1 0 01-.5 1.2l-2.26 1.13a11 11 0 005.5 5.5l1.13-2.26a1 1 0 011.2-.5l4.5 1.5a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z"/></svg>
+          <span data-i18n="nav.call">Appeler</span>
+        </a>
+
+        <a href="#contact" data-i18n="nav.cta" class="btn-shine px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold transition shadow-lg shadow-brand-600/25">Démarrer un projet</a>
+      </div>
+
+      <div class="lg:hidden flex items-center gap-2">
+        <div class="lang-switcher" data-lang="fr" role="group" aria-label="Language">
+          <span class="lang-pill"></span>
+          <button type="button" class="lang-btn active" data-set-lang="fr" style="padding:5px 9px;font-size:11px;">FR</button>
+          <button type="button" class="lang-btn" data-set-lang="en" style="padding:5px 9px;font-size:11px;">EN</button>
+        </div>
+
+        <button id="menu-toggle" class="w-10 h-10 grid place-items-center rounded-lg hover:bg-white/10 transition" aria-label="Menu" aria-expanded="false">
+          <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="lg:hidden hidden border-t border-white/10 bg-ink-900/98 backdrop-blur-xl">
+    <div class="px-5 py-5 space-y-1">
+      <a href="#services" data-i18n="nav.services" data-close-menu class="block px-4 py-3 rounded-xl text-gray-200 hover:bg-white/5 transition">Services</a>
+      <a href="#demos" data-i18n="nav.demos" data-close-menu class="block px-4 py-3 rounded-xl text-gray-200 hover:bg-white/5 transition">Démos</a>
+      <a href="#process" data-i18n="nav.process" data-close-menu class="block px-4 py-3 rounded-xl text-gray-200 hover:bg-white/5 transition">Processus</a>
+      <a href="#pricing" data-i18n="nav.pricing" data-close-menu class="block px-4 py-3 rounded-xl text-gray-200 hover:bg-white/5 transition">Tarifs</a>
+      <a href="#faq" data-i18n="nav.faq" data-close-menu class="block px-4 py-3 rounded-xl text-gray-200 hover:bg-white/5 transition">FAQ</a>
+      <a href="#contact" data-i18n="nav.cta" data-close-menu class="block mt-3 px-4 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-center font-semibold transition">Démarrer un projet</a>
+    </div>
+  </div>
+</header>
+
+
+<!-- ================================================================
+     HERO
+     ================================================================ -->
+<section id="home" class="relative pt-32 sm:pt-40 pb-20 sm:pb-28 overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-70"></div>
+  <div class="absolute -top-40 -left-32 w-[520px] h-[520px] bg-brand-600/22 rounded-full blur-[130px] blob"></div>
+  <div class="absolute top-20 -right-40 w-[480px] h-[480px] bg-gold-400/12 rounded-full blur-[130px] blob" style="animation-delay:-6s"></div>
+  <div class="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-brand-400/10 rounded-full blur-[120px] blob" style="animation-delay:-11s"></div>
+  <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink-900 to-transparent"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="grid lg:grid-cols-12 gap-14 items-center">
+
+      <div class="lg:col-span-7">
+        <div class="reveal inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass mb-7">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+          </span>
+          <span class="text-xs sm:text-sm text-gray-300" data-i18n="hero.badge">Disponible pour 3 projets cette semaine</span>
+        </div>
+
+        <h1 class="reveal reveal-d1 font-display font-bold tracking-tight text-[2rem] sm:text-5xl lg:text-[4.2rem] leading-[1.08] mb-6">
+          <span data-i18n="hero.h1a">Votre page Facebook</span><br class="hidden sm:block" />
+          <span data-i18n="hero.h1b">devient une</span> <span class="grad-text" data-i18n="hero.h1c">boutique WhatsApp</span><br class="hidden sm:block" />
+          <span data-i18n="hero.h1d">qui vend pendant que vous dormez.</span>
+        </h1>
+
+        <p class="reveal reveal-d2 text-base sm:text-lg text-gray-400 max-w-xl leading-relaxed mb-9">
+          <span data-i18n="hero.p1">237WebStudio ne fait pas de « beaux sites ». Nous construisons des</span>
+          <span class="text-white font-medium" data-i18n="hero.p2"> machines à commandes</span>
+          <span data-i18n="hero.p3"> pour boutiques, salons, restaurants et magasins partout au Cameroun. Le client voit, clique, et sa commande arrive direct sur votre WhatsApp.</span>
+        </p>
+
+        <div class="reveal reveal-d3 flex flex-col sm:flex-row gap-3.5 mb-10">
+          <a href="#contact" class="btn-shine group inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold transition shadow-xl shadow-brand-600/30">
+            <span data-i18n="hero.cta1">Démarrer mon site — 15 000 XAF</span>
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#demos" class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl glass hover:bg-white/10 text-white font-medium transition">
+            <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <span data-i18n="hero.cta2">Voir les démos</span>
+          </a>
+        </div>
+
+        <div class="reveal reveal-d4 grid grid-cols-3 gap-4 max-w-lg">
+          <div>
+            <div class="font-display text-2xl sm:text-3xl font-bold text-white counter" data-count="42">42</div>
+            <div class="text-xs sm:text-sm text-gray-500 mt-0.5" data-i18n="hero.stat1">Sites livrés</div>
+          </div>
+          <div class="border-l border-white/10 pl-4">
+            <div class="font-display text-2xl sm:text-3xl font-bold text-white">2<span class="text-brand-400">-3</span></div>
+            <div class="text-xs sm:text-sm text-gray-500 mt-0.5" data-i18n="hero.stat2">Jours de livraison</div>
+          </div>
+          <div class="border-l border-white/10 pl-4">
+            <div class="font-display text-2xl sm:text-3xl font-bold text-white counter" data-count="15">15</div>
+            <div class="text-xs sm:text-sm text-gray-500 mt-0.5" data-i18n="hero.stat3">K XAF à partir</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 relative reveal reveal-d2">
+        <div class="relative mx-auto max-w-[320px]">
+          <div class="absolute inset-0 bg-brand-500/22 blur-[70px] rounded-full scale-90"></div>
+
+          <div class="absolute -left-6 sm:-left-10 top-16 z-20 float-slow hidden sm:block">
+            <div class="glass-strong rounded-2xl px-4 py-3 shadow-2xl">
+              <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-green-500/15 grid place-items-center">
+                  <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 4v-4z"/></svg>
+                </div>
+                <div>
+                  <div class="text-[11px] text-gray-400 leading-none mb-1" data-i18n="phone.newOrder">Nouvelle commande</div>
+                  <div class="text-sm font-semibold text-white leading-none">+15 000 XAF</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute -right-4 sm:-right-8 bottom-24 z-20 float-med hidden sm:block" style="animation-delay:-1.5s">
+            <div class="glass-strong rounded-2xl px-4 py-3 shadow-2xl">
+              <div class="text-[11px] text-gray-400 leading-none mb-1.5" data-i18n="phone.views">Vues cette semaine</div>
+              <div class="text-lg font-display font-bold text-white leading-none">1 247</div>
+              <div class="text-[11px] text-brand-400 mt-1.5 flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+                +38%
+              </div>
+            </div>
+          </div>
+
+          <div class="relative rounded-[2.6rem] border-[10px] border-ink-700 bg-ink-800 shadow-[0_40px_90px_-20px_rgba(0,0,0,.9)] overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-ink-700 rounded-b-2xl z-10"></div>
+
+            <div class="bg-ink-900 pt-9 pb-4 px-4 min-h-[520px]">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 grid place-items-center text-white font-bold text-sm">TS</div>
+                <div class="flex-1">
+                  <div class="text-sm font-semibold text-white">Tech Store</div>
+                  <div class="text-[10px] text-gray-500" data-i18n="phone.online">En ligne · Akwa</div>
+                </div>
+                <div class="w-8 h-8 rounded-lg bg-white/5 grid place-items-center">
+                  <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.35-4.35"/></svg>
+                </div>
+              </div>
+
+              <div class="rounded-2xl overflow-hidden bg-ink-800 mb-3">
+                <img src="images/product-iphone.jpg" alt="Smartphone" width="600" height="160" class="w-full h-40 object-cover" loading="lazy" />
+                <div class="p-3">
+                  <div class="text-xs text-gray-400 mb-1" data-i18n="phone.new">Nouveau</div>
+                  <div class="text-sm font-semibold text-white mb-0.5">iPhone 13 Pro — 256GB</div>
+                  <div class="text-brand-400 font-bold text-base">485 000 XAF</div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2.5 mb-3">
+                <div class="rounded-xl overflow-hidden bg-ink-800">
+                  <img src="images/product-samsung.jpg" alt="Samsung" width="400" height="80" class="w-full h-20 object-cover" loading="lazy" />
+                  <div class="p-2">
+                    <div class="text-[10px] text-gray-300 leading-tight">Samsung A54</div>
+                    <div class="text-[11px] text-brand-400 font-semibold mt-0.5">195 000</div>
+                  </div>
+                </div>
+                <div class="rounded-xl overflow-hidden bg-ink-800">
+                  <img src="images/product-earbuds.jpg" alt="Accessoire" width="400" height="80" class="w-full h-20 object-cover" loading="lazy" />
+                  <div class="p-2">
+                    <div class="text-[10px] text-gray-300 leading-tight">Écouteurs BT</div>
+                    <div class="text-[11px] text-brand-400 font-semibold mt-0.5">12 500</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rounded-xl bg-[#25D366] py-3 flex items-center justify-center gap-2 shadow-lg shadow-green-500/20">
+                <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                <span class="text-white text-xs font-bold" data-i18n="phone.order">Commander sur WhatsApp</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-40 h-8 bg-brand-500/25 blur-2xl rounded-full"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     MARQUEE
+     ================================================================ -->
+<section class="border-y border-white/8 bg-ink-800/40 py-6 overflow-hidden marquee">
+  <div class="marquee-track">
+    <div class="flex items-center gap-14 px-7 shrink-0">
+      <span class="text-sm text-gray-500 whitespace-nowrap" data-i18n="marquee.1">Boutiques de téléphone</span>
+      <span class="text-brand-500/40">◆</span>
+      <span class="text-sm text-gray-500 whitespace-nowrap" data-i18n="marquee.2">Salons de coiffure</span>
+      <span class="text-brand-500/40">◆</span>
+      <span class="text-sm text-gray-500 whitespace-nowrap" data-i18n="marquee.3">Restaurants & Bars</span>
+      <span class="text-brand-500/40">◆</span>
+      <span class="text-sm text-gray-500 whitespace-nowrap" data-i18n="marquee.4">Boutiques de mode</span>
+      <span class="text-brand-500/40">◆</span>
+      <span class="text-sm text-gray-500 whitespace-nowrap" data-i18n="marquee.5">Coiffeurs / Barbiers</span>
+      <span class="text-brand-500/40">◆</span>
+      <span class="text-sm text-gray-500 whitespace-nowrap" data-i18n="marquee.6">Magasins d'électronique</span>
+      <span class="text-brand-500/40">◆</span>
+      <span class="text-sm text-gray-500 whitespace-nowrap" data-i18n="marquee.7">Agences immobilières</span>
+      <span class="text-brand-500/40">◆</span>
+    </div>
+    <div class="flex items-center gap-14 px-7 shrink-0" aria-hidden="true">
+      <span class="text-sm text-gray-500 whitespace-nowrap" data-i18n="marquee.1">Boutiques de téléphone</span>
+      <span class="text-brand-500/40">◆</span>
+      <span class="text-sm text-gray-500 whitespace-nowrap" data-i18n="marquee.2">Salons de coiffure</span>
+      <span class="text-brand-500/40">◆</span>
+      <span class="text-sm text-gray-500 whitespace-nowrap" data-i18n="marquee.3">Restaurants & Bars</span>
+      <span class="text-brand-500/40">◆</span>
+      <span class="text-sm text-gray-500 whitespace-nowrap" data-i18n="marquee.4">Boutiques de mode</span>
+      <span class="text-brand-500/40">◆</span>
+      <span class="text-sm text-gray-500 whitespace-nowrap" data-i18n="marquee.5">Coiffeurs / Barbiers</span>
+      <span class="text-brand-500/40">◆</span>
+      <span class="text-sm text-gray-500 whitespace-nowrap" data-i18n="marquee.6">Magasins d'électronique</span>
+      <span class="text-brand-500/40">◆</span>
+      <span class="text-sm text-gray-500 whitespace-nowrap" data-i18n="marquee.7">Agences immobilières</span>
+      <span class="text-brand-500/40">◆</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     PROBLEM
+     ================================================================ -->
+<section class="relative py-20 sm:py-28 overflow-hidden">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-600/8 rounded-full blur-[140px]"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="max-w-3xl mb-14">
+      <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+        <span class="text-xs text-red-300 font-medium" data-i18n="problem.tag">Le problème</span>
+      </div>
+      <h2 class="reveal reveal-d1 font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">
+        <span data-i18n="problem.h1">Une page Facebook, ce n'est pas</span><br class="hidden sm:block" />
+        <span data-i18n="problem.h2a">une</span> <span class="text-red-400" data-i18n="problem.h2b">machine à vendre</span>.
+      </h2>
+      <p class="reveal reveal-d2 text-gray-400 text-base sm:text-lg leading-relaxed" data-i18n="problem.p">Vous publiez des photos. Les gens likent. Puis ils disparaissent. Pourquoi ? Parce qu'ils ne savent pas comment commander, combien ça coûte, ni si vous êtes sérieux.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="reveal glow-card glass rounded-2xl p-7">
+        <div class="w-12 h-12 rounded-xl bg-red-500/12 grid place-items-center mb-5">
+          <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold text-white mb-3" data-i18n="problem.c1t">Le client abandonne</h3>
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="problem.c1p">Il doit vous envoyer un message, attendre votre réponse, demander le prix. 3 étapes de trop. Sur 10 personnes, 7 partent chez le concurrent.</p>
+      </div>
+      <div class="reveal reveal-d1 glow-card glass rounded-2xl p-7">
+        <div class="w-12 h-12 rounded-xl bg-orange-500/12 grid place-items-center mb-5">
+          <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold text-white mb-3" data-i18n="problem.c2t">Vous perdez du temps</h3>
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="problem.c2p">« C'est combien ? » — 40 fois par jour. Vous répétez la même chose au lieu de servir les clients qui sont déjà prêts à payer.</p>
+      </div>
+      <div class="reveal reveal-d2 glow-card glass rounded-2xl p-7">
+        <div class="w-12 h-12 rounded-xl bg-yellow-500/12 grid place-items-center mb-5">
+          <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622C17.176 19.29 21 14.591 21 9c0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold text-white mb-3" data-i18n="problem.c3t">Vous perdez la confiance</h3>
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="problem.c3p">Pas de site = pas de preuve. Le client se demande si vous êtes réel, si vous livrez, si vous allez disparaître avec son argent.</p>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d3 mt-14 relative rounded-2xl overflow-hidden border border-brand-500/25">
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-900/70 via-brand-800/40 to-ink-800/70"></div>
+      <div class="relative px-7 sm:px-10 py-9 flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
+        <div class="flex items-start gap-5">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/20 grid place-items-center shrink-0">
+            <svg class="w-6 h-6 text-brand-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-display text-lg sm:text-xl font-semibold text-white mb-1" data-i18n="problem.solTitle">La solution 237WebStudio</h3>
+            <p class="text-sm text-gray-300 max-w-xl" data-i18n="problem.solP">Un lien unique. Une boutique rapide. Le client voit tout, choisit, et sa commande arrive sur votre WhatsApp en 1 clic.</p>
+          </div>
+        </div>
+        <a href="#contact" class="shrink-0 px-6 py-3 rounded-xl bg-white text-ink-900 font-semibold text-sm hover:bg-brand-50 transition" data-i18n="problem.solCta">Je veux ça</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SERVICES
+     ================================================================ -->
+<section id="services" class="relative py-20 sm:py-28 bg-ink-800/30 border-y border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="max-w-2xl mb-14">
+      <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span>
+        <span class="text-xs text-brand-300 font-medium" data-i18n="services.tag">Ce que nous construisons</span>
+      </div>
+      <h2 class="reveal reveal-d1 font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">
+        <span data-i18n="services.h1">Des sites pensés pour</span><br />
+        <span class="grad-text" data-i18n="services.h2">vendre, pas pour décorer.</span>
+      </h2>
+      <p class="reveal reveal-d2 text-gray-400 leading-relaxed" data-i18n="services.p">Chaque page est optimisée pour un seul objectif : transformer un visiteur en commande WhatsApp. Rien de plus, rien de moins.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Service cards — 6 total, each with data-i18n on title, description and list items -->
+      <div class="reveal glow-card glass rounded-2xl p-7 group">
+        <div class="w-12 h-12 rounded-xl bg-brand-500/12 grid place-items-center mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <h3 class="font-display text-lg font-semibold text-white mb-2.5" data-i18n="svc1.t">Boutique WhatsApp</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-5" data-i18n="svc1.p">Catalogue produits, prix clairs, galerie photo et bouton « Commander » qui ouvre WhatsApp avec le produit déjà écrit.</p>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc1.l1">Jusqu'à 50 produits</span></li>
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc1.l2">Panier → message WhatsApp auto</span></li>
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc1.l3">Modifiable par vous-même</span></li>
+        </ul>
+      </div>
+
+      <div class="reveal reveal-d1 glow-card glass rounded-2xl p-7 group">
+        <div class="w-12 h-12 rounded-xl bg-gold-400/12 grid place-items-center mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="font-display text-lg font-semibold text-white mb-2.5" data-i18n="svc2.t">Réservation en ligne</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-5" data-i18n="svc2.p">Pour salons, barbiers, spas. Le client choisit service, date et heure. Vous recevez une notification instantanée.</p>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc2.l1">Calendrier & créneaux</span></li>
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc2.l2">Notification propriétaire</span></li>
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc2.l3">Confirmation client WhatsApp</span></li>
+        </ul>
+      </div>
+
+      <div class="reveal reveal-d2 glow-card glass rounded-2xl p-7 group">
+        <div class="w-12 h-12 rounded-xl bg-orange-500/12 grid place-items-center mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        </div>
+        <h3 class="font-display text-lg font-semibold text-white mb-2.5" data-i18n="svc3.t">Menu Restaurant</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-5" data-i18n="svc3.p">Menu digital avec photos, prix, plats du jour. Commande ou réservation directe, sans appeler.</p>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc3.l1">Menu par catégories</span></li>
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc3.l2">Commande WhatsApp</span></li>
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc3.l3">Google Maps intégré</span></li>
+        </ul>
+      </div>
+
+      <div class="reveal glow-card glass rounded-2xl p-7 group">
+        <div class="w-12 h-12 rounded-xl bg-purple-500/12 grid place-items-center mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+        </div>
+        <h3 class="font-display text-lg font-semibold text-white mb-2.5" data-i18n="svc4.t">Page de vente</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-5" data-i18n="svc4.p">Une page unique et puissante pour vendre un produit, un service ou une formation. Design qui convertit.</p>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc4.l1">Structure AIDA</span></li>
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc4.l2">Preuves sociales</span></li>
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc4.l3">CTA multiples</span></li>
+        </ul>
+      </div>
+
+      <div class="reveal reveal-d1 glow-card glass rounded-2xl p-7 group">
+        <div class="w-12 h-12 rounded-xl bg-blue-500/12 grid place-items-center mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+        </div>
+        <h3 class="font-display text-lg font-semibold text-white mb-2.5" data-i18n="svc5.t">Fiche Google</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-5" data-i18n="svc5.p">Pour être trouvé quand on cherche « boutique téléphone Douala ». Photos, horaires, avis, itinéraire.</p>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc5.l1">Création & vérification</span></li>
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc5.l2">Photos optimisées</span></li>
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc5.l3">Lien vers votre site</span></li>
+        </ul>
+      </div>
+
+      <div class="reveal reveal-d2 glow-card glass rounded-2xl p-7 group">
+        <div class="w-12 h-12 rounded-xl bg-pink-500/12 grid place-items-center mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-pink-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3 class="font-display text-lg font-semibold text-white mb-2.5" data-i18n="svc6.t">Maintenance & Support</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-5" data-i18n="svc6.p">On s'occupe de tout : hébergement, sauvegardes, petites modifications. Vous vous concentrez sur la vente.</p>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc6.l1">Hébergement inclus</span></li>
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc6.l2">Modifs illimitées</span></li>
+          <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="svc6.l3">Support WhatsApp</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     DEMOS (Vanilla JS tabs, no Alpine)
+     ================================================================ -->
+<section id="demos" class="relative py-20 sm:py-28 overflow-hidden">
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-600/10 rounded-full blur-[130px]"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="max-w-2xl mb-12">
+      <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+        <span class="text-xs text-gold-300 font-medium" data-i18n="demos.tag">Nos modèles</span>
+      </div>
+      <h2 class="reveal reveal-d1 font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">
+        <span data-i18n="demos.h1">Regardez. Touchez.</span> <span class="grad-text" data-i18n="demos.h2">Commandez.</span>
+      </h2>
+      <p class="reveal reveal-d2 text-gray-400 leading-relaxed" data-i18n="demos.p">Trois exemples réels de ce que nous livrons. Choisissez votre secteur.</p>
+    </div>
+
+    <div class="reveal reveal-d3 flex flex-wrap gap-2.5 mb-9" role="tablist">
+      <button type="button" class="tab-btn active px-5 py-2.5 rounded-xl border border-white/12 text-sm text-gray-300 hover:text-white hover:border-white/25 transition font-medium" data-tab="shop">📱 <span data-i18n="demos.tab1">Boutique Téléphone</span></button>
+      <button type="button" class="tab-btn px-5 py-2.5 rounded-xl border border-white/12 text-sm text-gray-300 hover:text-white hover:border-white/25 transition font-medium" data-tab="salon">✂️ <span data-i18n="demos.tab2">Salon / Barbier</span></button>
+      <button type="button" class="tab-btn px-5 py-2.5 rounded-xl border border-white/12 text-sm text-gray-300 hover:text-white hover:border-white/25 transition font-medium" data-tab="resto">🍽️ <span data-i18n="demos.tab3">Restaurant</span></button>
+    </div>
+
+    <div class="tab-panel" data-panel="shop">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+          <img src="images/product-earbuds.jpg" alt="Boutique de téléphone" width="1000" height="420" class="w-full h-[320px] sm:h-[420px] object-cover" loading="lazy" />
+        </div>
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 mb-5">
+            <span class="text-xs text-brand-300 font-medium" data-i18n="demo1.tag">Magasin de téléphone</span>
+          </div>
+          <h3 class="font-display text-2xl sm:text-3xl font-bold text-white mb-4" data-i18n="demo1.h">Le client voit le prix. Il commande. C'est tout.</h3>
+          <p class="text-gray-400 leading-relaxed mb-7" data-i18n="demo1.p">Fini les « c'est combien ? » toute la journée. Chaque produit a sa photo, son prix et son bouton. Le message WhatsApp arrive déjà rempli avec le modèle exact.</p>
+          <ul class="space-y-3.5 mb-8">
+            <li class="flex items-start gap-3"><div class="w-6 h-6 rounded-full bg-brand-500/15 grid place-items-center shrink-0 mt-0.5"><span class="text-brand-400 text-xs">✓</span></div><span class="text-sm text-gray-300" data-i18n="demo1.l1">Catalogue jusqu'à 50 produits avec photos</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 rounded-full bg-brand-500/15 grid place-items-center shrink-0 mt-0.5"><span class="text-brand-400 text-xs">✓</span></div><span class="text-sm text-gray-300" data-i18n="demo1.l2">Filtres par marque, prix, état</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 rounded-full bg-brand-500/15 grid place-items-center shrink-0 mt-0.5"><span class="text-brand-400 text-xs">✓</span></div><span class="text-sm text-gray-300" data-i18n="demo1.l3">Commande WhatsApp pré-remplie</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 rounded-full bg-brand-500/15 grid place-items-center shrink-0 mt-0.5"><span class="text-brand-400 text-xs">✓</span></div><span class="text-sm text-gray-300" data-i18n="demo1.l4">Google Maps + appel direct</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-3">
+            <a href="#contact" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm transition" data-i18n="demo.cta">Je veux ce modèle</a>
+            <span class="px-6 py-3 rounded-xl glass text-sm text-gray-300" data-i18n="demo1.price">À partir de 25 000 XAF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel hidden" data-panel="salon">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl lg:order-2">
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80&auto=format&fit=crop" alt="Salon de coiffure" width="1000" height="420" class="w-full h-[320px] sm:h-[420px] object-cover" loading="lazy" />
+        </div>
+        <div class="lg:order-1">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-5">
+            <span class="text-xs text-gold-300 font-medium" data-i18n="demo2.tag">Salon · Barbier · Spa</span>
+          </div>
+          <h3 class="font-display text-2xl sm:text-3xl font-bold text-white mb-4" data-i18n="demo2.h">Votre agenda se remplit tout seul, même la nuit.</h3>
+          <p class="text-gray-400 leading-relaxed mb-7" data-i18n="demo2.p">Le client choisit son service, son jour et son heure. Vous recevez une notification immédiate. Plus d'appels manqués, plus de doubles réservations.</p>
+          <ul class="space-y-3.5 mb-8">
+            <li class="flex items-start gap-3"><div class="w-6 h-6 rounded-full bg-gold-400/15 grid place-items-center shrink-0 mt-0.5"><span class="text-gold-400 text-xs">✓</span></div><span class="text-sm text-gray-300" data-i18n="demo2.l1">Calendrier avec créneaux en temps réel</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 rounded-full bg-gold-400/15 grid place-items-center shrink-0 mt-0.5"><span class="text-gold-400 text-xs">✓</span></div><span class="text-sm text-gray-300" data-i18n="demo2.l2">Notification instantanée au propriétaire</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 rounded-full bg-gold-400/15 grid place-items-center shrink-0 mt-0.5"><span class="text-gold-400 text-xs">✓</span></div><span class="text-sm text-gray-300" data-i18n="demo2.l3">Confirmation automatique au client</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 rounded-full bg-gold-400/15 grid place-items-center shrink-0 mt-0.5"><span class="text-gold-400 text-xs">✓</span></div><span class="text-sm text-gray-300" data-i18n="demo2.l4">Galerie + tarifs des services</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-3">
+            <a href="#contact" class="px-6 py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-ink-900 font-semibold text-sm transition" data-i18n="demo.cta">Je veux ce modèle</a>
+            <span class="px-6 py-3 rounded-xl glass text-sm text-gray-300" data-i18n="demo2.price">À partir de 40 000 XAF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel hidden" data-panel="resto">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+          <img src="images/demo-restaurant.jpg" alt="Restaurant" width="1000" height="420" class="w-full h-[320px] sm:h-[420px] object-cover" loading="lazy" />
+        </div>
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-5">
+            <span class="text-xs text-orange-300 font-medium" data-i18n="demo3.tag">Restaurant · Bar · Fast-food</span>
+          </div>
+          <h3 class="font-display text-2xl sm:text-3xl font-bold text-white mb-4" data-i18n="demo3.h">Le menu que le client consulte avant même d'arriver.</h3>
+          <p class="text-gray-400 leading-relaxed mb-7" data-i18n="demo3.p">Un QR code sur chaque table, un lien dans votre bio Instagram. Le client voit les plats, les prix, et commande ou réserve en un clic.</p>
+          <ul class="space-y-3.5 mb-8">
+            <li class="flex items-start gap-3"><div class="w-6 h-6 rounded-full bg-orange-500/15 grid place-items-center shrink-0 mt-0.5"><span class="text-orange-400 text-xs">✓</span></div><span class="text-sm text-gray-300" data-i18n="demo3.l1">Menu par catégories avec photos</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 rounded-full bg-orange-500/15 grid place-items-center shrink-0 mt-0.5"><span class="text-orange-400 text-xs">✓</span></div><span class="text-sm text-gray-300" data-i18n="demo3.l2">Plats du jour en 30 secondes</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 rounded-full bg-orange-500/15 grid place-items-center shrink-0 mt-0.5"><span class="text-orange-400 text-xs">✓</span></div><span class="text-sm text-gray-300" data-i18n="demo3.l3">Commande ou réservation de table</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 rounded-full bg-orange-500/15 grid place-items-center shrink-0 mt-0.5"><span class="text-orange-400 text-xs">✓</span></div><span class="text-sm text-gray-300" data-i18n="demo3.l4">QR code prêt à imprimer</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-3">
+            <a href="#contact" class="px-6 py-3 rounded-xl bg-orange-500 hover:bg-orange-400 text-white font-semibold text-sm transition" data-i18n="demo.cta">Je veux ce modèle</a>
+            <span class="px-6 py-3 rounded-xl glass text-sm text-gray-300" data-i18n="demo3.price">À partir de 30 000 XAF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     ORDER FLOW — LIVE ANIMATION
+     ================================================================ -->
+<section id="flow" class="relative py-20 sm:py-28 overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-40"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-brand-600/10 rounded-full blur-[150px]"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-8">
+
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 mb-5">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+        </span>
+        <span class="text-xs text-brand-300 font-medium" data-i18n="flow.tag">En direct</span>
+      </div>
+      <h2 class="reveal reveal-d1 font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">
+        <span data-i18n="flow.h1">Une commande,</span> <span class="grad-text" data-i18n="flow.h2">en 4 secondes.</span>
+      </h2>
+      <p class="reveal reveal-d2 text-gray-400 leading-relaxed" data-i18n="flow.p">Voici exactement ce qui se passe quand un client commande sur votre site.</p>
+    </div>
+
+    <div class="flow-stage reveal reveal-d3">
+
+      <!-- ===== CUSTOMER PHONE ===== -->
+      <div class="flow-phone flow-phone-left">
+        <div class="flow-notch"></div>
+        <div class="flow-screen">
+          <div class="flow-product">
+            <img src="images/product-iphone.jpg" alt="" loading="lazy" />
+            <div class="flow-product-info">
+              <div class="flow-product-title">iPhone 13 Pro</div>
+              <div class="flow-product-price">485 000 XAF</div>
+            </div>
+          </div>
+
+          <div class="flow-order-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            <span data-i18n="flow.btn">Commander</span>
+            <span class="flow-btn-shine"></span>
+          </div>
+
+          <div class="flow-tap">
+            <span class="flow-tap-ring"></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v2"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+          </div>
+
+          <div class="flow-confirmed">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span data-i18n="flow.confirmed">Commande confirmée</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== FLYING MESSAGE ===== -->
+      <div class="flow-flying">
+        <div class="flow-flying-bubble">
+          <span class="flow-line"></span>
+          <span class="flow-line short"></span>
+        </div>
+        <span class="flow-flying-trail"></span>
+      </div>
+
+      <!-- ===== SUPPLIER PHONE ===== -->
+      <div class="flow-phone flow-phone-right">
+        <div class="flow-notch"></div>
+        <div class="flow-screen">
+          <div class="flow-chat-header">
+            <div class="flow-avatar">C</div>
+            <div>
+              <div class="flow-chat-name" data-i18n="flow.customer">Client</div>
+              <div class="flow-chat-status" data-i18n="flow.online">en ligne</div>
+            </div>
+          </div>
+
+          <div class="flow-chat-msg">
+            <div data-i18n="flow.msg1">Bonjour, je veux commander</div>
+            <div class="flow-chat-product">iPhone 13 Pro</div>
+            <div class="flow-chat-price">485 000 XAF</div>
+          </div>
+
+          <div class="flow-confirm-btn">
+            <span data-i18n="flow.confirm">Confirmer</span>
+            <span class="flow-confirm-flash"></span>
+          </div>
+        </div>
+
+        <div class="flow-new-badge">
+          <span class="flow-badge-dot"></span>
+          <span data-i18n="flow.new">Nouvelle commande</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Steps -->
+    <div class="reveal reveal-d4 grid grid-cols-2 sm:grid-cols-4 gap-4 mt-14 max-w-3xl mx-auto">
+      <div class="flow-step">
+        <div class="flow-step-num">1</div>
+        <div class="flow-step-label" data-i18n="flow.s1">Client choisit</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">2</div>
+        <div class="flow-step-label" data-i18n="flow.s2">Tape Commander</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">3</div>
+        <div class="flow-step-label" data-i18n="flow.s3">Vous recevez</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">4</div>
+        <div class="flow-step-label" data-i18n="flow.s4">Vous confirmez</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================================
+     CITIES
+     ================================================================ -->
+<section class="relative py-16 sm:py-20 bg-ink-800/30 border-y border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span>
+        <span class="text-xs text-brand-300 font-medium" data-i18n="cities.tag">Présence nationale</span>
+      </div>
+      <h2 class="reveal reveal-d1 font-display text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-4">
+        <span data-i18n="cities.h1">Nous travaillons</span> <span class="grad-text" data-i18n="cities.h2">partout au Cameroun.</span>
+      </h2>
+      <p class="reveal reveal-d2 text-gray-400 text-sm leading-relaxed" data-i18n="cities.p">Que vous soyez à Douala, Yaoundé ou ailleurs, tout se fait par WhatsApp et appel vidéo. Les paiements MoMo fonctionnent dans tout le pays.</p>
+    </div>
+
+    <div class="reveal reveal-d3 flex flex-wrap justify-center gap-3">
+      <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">📍 Douala</span>
+      <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">📍 Yaoundé</span>
+      <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">📍 Bafoussam</span>
+      <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">📍 Kribi</span>
+      <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">📍 Limbé</span>
+      <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">📍 Buea</span>
+      <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">📍 Bamenda</span>
+      <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">📍 Garoua</span>
+      <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">📍 Maroua</span>
+      <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">📍 Ngaoundéré</span>
+      <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">📍 Ebolowa</span>
+      <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">📍 Bertoua</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     PROCESS
+     ================================================================ -->
+<section id="process" class="relative py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="max-w-2xl mb-16">
+      <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span>
+        <span class="text-xs text-brand-300 font-medium" data-i18n="process.tag">Le processus</span>
+      </div>
+      <h2 class="reveal reveal-d1 font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">
+        <span data-i18n="process.h1">De votre page Facebook</span><br />
+        <span class="grad-text" data-i18n="process.h2">au site qui vend, en 4 étapes.</span>
+      </h2>
+      <p class="reveal reveal-d2 text-gray-400 leading-relaxed" data-i18n="process.p">Pas de réunion interminable. Pas de jargon. Vous parlez, on construit, vous vendez.</p>
+    </div>
+
+    <div class="relative grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="hidden lg:block absolute top-[52px] left-[12%] right-[12%] h-px bg-gradient-to-r from-brand-500/40 via-brand-500/20 to-transparent"></div>
+      <div class="reveal relative">
+        <div class="relative z-10 w-[68px] h-[68px] rounded-2xl bg-ink-900 border border-brand-500/30 grid place-items-center mb-6 shadow-xl shadow-brand-600/10"><span class="font-display text-2xl font-bold text-brand-400">01</span></div>
+        <h3 class="font-display text-lg font-semibold text-white mb-2.5" data-i18n="p1.t">Vous nous écrivez</h3>
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="p1.p">Un message WhatsApp. Vous nous dites ce que vous vendez et ce que vous voulez. Réponse en moins d'une heure.</p>
+      </div>
+      <div class="reveal reveal-d1 relative">
+        <div class="relative z-10 w-[68px] h-[68px] rounded-2xl bg-ink-900 border border-brand-500/30 grid place-items-center mb-6 shadow-xl shadow-brand-600/10"><span class="font-display text-2xl font-bold text-brand-400">02</span></div>
+        <h3 class="font-display text-lg font-semibold text-white mb-2.5" data-i18n="p2.t">On prépare le design</h3>
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="p2.p">En 24h vous recevez un aperçu de votre site. Vous validez ou demandez des changements.</p>
+      </div>
+      <div class="reveal reveal-d2 relative">
+        <div class="relative z-10 w-[68px] h-[68px] rounded-2xl bg-ink-900 border border-brand-500/30 grid place-items-center mb-6 shadow-xl shadow-brand-600/10"><span class="font-display text-2xl font-bold text-brand-400">03</span></div>
+        <h3 class="font-display text-lg font-semibold text-white mb-2.5" data-i18n="p3.t">On construit & connecte</h3>
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="p3.p">Produits, photos, WhatsApp, Google Maps, fiche Google. Tout est branché et testé.</p>
+      </div>
+      <div class="reveal reveal-d3 relative">
+        <div class="relative z-10 w-[68px] h-[68px] rounded-2xl bg-brand-600 border border-brand-500 grid place-items-center mb-6 shadow-xl shadow-brand-600/40"><span class="font-display text-2xl font-bold text-white">04</span></div>
+        <h3 class="font-display text-lg font-semibold text-white mb-2.5" data-i18n="p4.t">Vous recevez les commandes</h3>
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="p4.p">Le site est en ligne. Vous partagez le lien sur Facebook, Instagram, WhatsApp Status. Les commandes arrivent.</p>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d4 mt-12 flex items-center gap-3 text-sm text-gray-500">
+      <span data-i18n="process.time">Durée totale :</span>
+      <span class="text-white font-medium" data-i18n="process.timeVal">2 à 3 jours ouvrables pour un site standard.</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     WHY US
+     ================================================================ -->
+<section class="relative py-20 sm:py-28 bg-ink-800/30 border-y border-white/5 overflow-hidden">
+  <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gold-400/8 rounded-full blur-[140px]"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 mb-5">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span>
+          <span class="text-xs text-brand-300 font-medium" data-i18n="why.tag">Pourquoi nous</span>
+        </div>
+        <h2 class="reveal reveal-d1 font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+          <span data-i18n="why.h1">On connaît</span><br />
+          <span class="grad-text" data-i18n="why.h2">le marché camerounais.</span>
+        </h2>
+        <p class="reveal reveal-d2 text-gray-400 leading-relaxed mb-9" data-i18n="why.p">On ne vous vend pas un site américain à 500 000 XAF que personne ne consulte. On vous vend un outil simple, rapide, adapté à la réalité du client camerounais : mobile, WhatsApp, paiement à la livraison.</p>
+
+        <div class="space-y-5">
+          <div class="reveal reveal-d2 flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-brand-500/12 grid place-items-center shrink-0">
+              <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1" data-i18n="why.f1t">Pensé mobile d'abord</h4>
+              <p class="text-sm text-gray-400" data-i18n="why.f1p">90% de vos clients naviguent sur téléphone. Nos sites sont conçus pour ça, pas adaptés après coup.</p>
+            </div>
+          </div>
+          <div class="reveal reveal-d3 flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-gold-400/12 grid place-items-center shrink-0">
+              <svg class="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1" data-i18n="why.f2t">Rapide à charger</h4>
+              <p class="text-sm text-gray-400" data-i18n="why.f2p">Connexion 3G ? Nos pages s'affichent en moins de 2 secondes. Pas de perte de client.</p>
+            </div>
+          </div>
+          <div class="reveal reveal-d3 flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-purple-500/12 grid place-items-center shrink-0">
+              <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1" data-i18n="why.f3t">Prix adapté au marché</h4>
+              <p class="text-sm text-gray-400" data-i18n="why.f3p">À partir de 15 000 XAF. Payable par MTN MoMo ou Orange Money. 50% au départ, 50% à la livraison.</p>
+            </div>
+          </div>
+          <div class="reveal reveal-d4 flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-blue-500/12 grid place-items-center shrink-0">
+              <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1" data-i18n="why.f4t">Support en français, sur WhatsApp</h4>
+              <p class="text-sm text-gray-400" data-i18n="why.f4p">Vous avez un problème ? Vous nous écrivez. Pas de ticket, pas d'attente, pas de robot.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-d2 relative">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div class="rounded-2xl overflow-hidden border border-white/10 float-slow">
+              <img src="images/why-commerce.jpg" alt="Commerce" width="600" height="208" class="w-full h-52 object-cover" loading="lazy" />
+            </div>
+            <div class="rounded-2xl overflow-hidden border border-white/10 float-fast">
+              <img src="images/why-boutique.jpg" alt="Boutique" width="600" height="160" class="w-full h-40 object-cover" loading="lazy" />
+            </div>
+          </div>
+          <div class="space-y-4 pt-8">
+            <div class="rounded-2xl overflow-hidden border border-white/10 float-med">
+              <img src="images/why-mode.jpg" alt="Mode" width="600" height="160" class="w-full h-40 object-cover" loading="lazy" />
+            </div>
+            <div class="rounded-2xl overflow-hidden border border-white/10 float-slow" style="animation-delay:-2s">
+              <img src="images/why-salon.jpg" alt="Salon" width="600" height="208" class="w-full h-52 object-cover" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     PRICING
+     ================================================================ -->
+<section id="pricing" class="relative py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="max-w-2xl mx-auto text-center mb-16">
+      <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span>
+        <span class="text-xs text-brand-300 font-medium" data-i18n="price.tag">Tarifs clairs</span>
+      </div>
+      <h2 class="reveal reveal-d1 font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">
+        <span data-i18n="price.h1">Pas de surprise.</span><br />
+        <span class="grad-text" data-i18n="price.h2">Pas de frais cachés.</span>
+      </h2>
+      <p class="reveal reveal-d2 text-gray-400 leading-relaxed" data-i18n="price.p">Payez 50% au départ, 50% à la livraison. MTN MoMo ou Orange Money acceptés.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto items-start">
+      <div class="reveal glow-card glass rounded-3xl p-8">
+        <div class="mb-6">
+          <h3 class="font-display text-xl font-semibold text-white mb-2">Starter</h3>
+          <p class="text-sm text-gray-400" data-i18n="starter.desc">Pour tester et être en ligne vite.</p>
+        </div>
+        <div class="mb-7">
+          <div class="flex items-baseline gap-1.5">
+            <span class="font-display text-4xl font-bold text-white">15 000</span>
+            <span class="text-gray-400 text-sm font-medium">XAF</span>
+          </div>
+          <div class="text-xs text-gray-500 mt-1.5" data-i18n="starter.sub">Paiement unique</div>
+        </div>
+        <div class="mb-6 p-3 rounded-xl bg-blue-500/10 border border-blue-500/20">
+          <p class="text-[11px] text-blue-200 leading-relaxed" data-i18n="starter.urlNote">Adresse gratuite fournie (ex : votreboutique.vercel.app). Pas de domaine .com à ce prix.</p>
+        </div>
+        <ul class="space-y-3 mb-8 text-sm">
+          <li class="flex items-start gap-2.5 text-gray-300"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="starter.l1">1 page unique</span></li>
+          <li class="flex items-start gap-2.5 text-gray-300"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="starter.l2">Jusqu'à 6 produits/services</span></li>
+          <li class="flex items-start gap-2.5 text-gray-300"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="starter.l3">Bouton WhatsApp commande</span></li>
+          <li class="flex items-start gap-2.5 text-gray-300"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="starter.l4">Google Maps + horaires</span></li>
+          <li class="flex items-start gap-2.5 text-gray-300"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="starter.l5">Adresse gratuite</span></li>
+          <li class="flex items-start gap-2.5 text-gray-500"><span class="mt-0.5">—</span> <span data-i18n="starter.l6">Pas de domaine personnalisé</span></li>
+          <li class="flex items-start gap-2.5 text-gray-500"><span class="mt-0.5">—</span> <span data-i18n="starter.l7">Pas de réservation</span></li>
+        </ul>
+        <a href="#contact" class="block w-full text-center px-6 py-3.5 rounded-xl border border-white/15 hover:border-brand-500/50 hover:bg-brand-500/5 text-white font-medium text-sm transition" data-i18n="starter.cta">Choisir Starter</a>
+      </div>
+
+      <div class="reveal reveal-d1 relative">
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
+          <span class="px-4 py-1.5 rounded-full bg-gradient-to-r from-brand-500 to-gold-400 text-ink-900 text-[11px] font-bold tracking-wide uppercase shadow-lg" data-i18n="biz.badge">Le plus choisi</span>
+        </div>
+        <div class="relative rounded-3xl p-8 bg-gradient-to-b from-brand-900/60 to-ink-800/60 border-2 border-brand-500/40 shadow-2xl shadow-brand-600/20">
+          <div class="mb-6">
+            <h3 class="font-display text-xl font-semibold text-white mb-2">Business</h3>
+            <p class="text-sm text-gray-400" data-i18n="biz.desc">Pour vraiment vendre sérieusement.</p>
+          </div>
+          <div class="mb-7">
+            <div class="flex items-baseline gap-1.5">
+              <span class="font-display text-4xl font-bold text-white">35 000</span>
+              <span class="text-gray-400 text-sm font-medium">XAF</span>
+            </div>
+            <div class="text-xs text-gray-500 mt-1.5" data-i18n="biz.sub">Paiement unique + domaine</div>
+          </div>
+          <div class="mb-6 p-3 rounded-xl bg-brand-500/10 border border-brand-500/25">
+            <p class="text-[11px] text-brand-200 leading-relaxed" data-i18n="biz.urlNote">Votre propre domaine .com / .cm inclus pour la 1ère année.</p>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm">
+            <li class="flex items-start gap-2.5 text-gray-200"><span class="text-brand-400 mt-0.5">✓</span> <span class="font-medium" data-i18n="biz.l1">Domaine personnalisé (1ère année)</span></li>
+            <li class="flex items-start gap-2.5 text-gray-200"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="biz.l2">Jusqu'à 5 pages</span></li>
+            <li class="flex items-start gap-2.5 text-gray-200"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="biz.l3">Jusqu'à 50 produits</span></li>
+            <li class="flex items-start gap-2.5 text-gray-200"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="biz.l4">Panier multi-produits → WhatsApp</span></li>
+            <li class="flex items-start gap-2.5 text-gray-200"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="biz.l5">Fiche Google Business</span></li>
+            <li class="flex items-start gap-2.5 text-gray-200"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="biz.l6">SEO de base</span></li>
+            <li class="flex items-start gap-2.5 text-gray-200"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="biz.l7">Formation 30 min</span></li>
+            <li class="flex items-start gap-2.5 text-gray-200"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="biz.l8">30 jours de support gratuit</span></li>
+          </ul>
+          <a href="#contact" class="btn-shine block w-full text-center px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm transition shadow-lg shadow-brand-600/30" data-i18n="biz.cta">Choisir Business</a>
+        </div>
+      </div>
+
+      <div class="reveal reveal-d2 glow-card glass rounded-3xl p-8">
+        <div class="mb-6">
+          <h3 class="font-display text-xl font-semibold text-white mb-2">Premium</h3>
+          <p class="text-sm text-gray-400" data-i18n="prem.desc">Avec réservation & automatisation.</p>
+        </div>
+        <div class="mb-7">
+          <div class="flex items-baseline gap-1.5">
+            <span class="font-display text-4xl font-bold text-white">60 000</span>
+            <span class="text-gray-400 text-sm font-medium">XAF</span>
+          </div>
+          <div class="text-xs text-gray-500 mt-1.5" data-i18n="prem.sub">Paiement unique + domaine</div>
+        </div>
+        <div class="mb-6 p-3 rounded-xl bg-gold-400/10 border border-gold-400/25">
+          <p class="text-[11px] text-gold-200 leading-relaxed" data-i18n="prem.urlNote">Domaine + système de réservation avec notifications Telegram inclus.</p>
+        </div>
+        <ul class="space-y-3 mb-8 text-sm">
+          <li class="flex items-start gap-2.5 text-gray-300"><span class="text-brand-400 mt-0.5">✓</span> <span class="font-medium text-white" data-i18n="prem.l1">Tout le pack Business</span></li>
+          <li class="flex items-start gap-2.5 text-gray-300"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="prem.l2">Système de réservation</span></li>
+          <li class="flex items-start gap-2.5 text-gray-300"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="prem.l3">Notification propriétaire (Telegram)</span></li>
+          <li class="flex items-start gap-2.5 text-gray-300"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="prem.l4">Confirmation client automatique</span></li>
+          <li class="flex items-start gap-2.5 text-gray-300"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="prem.l5">Tableau de bord admin</span></li>
+          <li class="flex items-start gap-2.5 text-gray-300"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="prem.l6">Produits/services illimités</span></li>
+          <li class="flex items-start gap-2.5 text-gray-300"><span class="text-brand-400 mt-0.5">✓</span> <span data-i18n="prem.l7">90 jours de support gratuit</span></li>
+        </ul>
+        <a href="#contact" class="block w-full text-center px-6 py-3.5 rounded-xl border border-white/15 hover:border-gold-400/50 hover:bg-gold-400/5 text-white font-medium text-sm transition" data-i18n="prem.cta">Choisir Premium</a>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d3 max-w-5xl mx-auto mt-8">
+      <div class="glass rounded-2xl px-7 py-6 flex flex-col sm:flex-row items-start sm:items-center gap-5 justify-between">
+        <div>
+          <h4 class="font-semibold text-white text-sm mb-0.5" data-i18n="maint.t">Formule Entretien — 7 500 XAF / mois</h4>
+          <p class="text-xs text-gray-400" data-i18n="maint.p">Hébergement, sauvegardes, modifications illimitées, support WhatsApp prioritaire.</p>
+        </div>
+        <span class="text-xs text-gray-500 shrink-0" data-i18n="maint.note">Optionnel · Résiliable à tout moment</span>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d4 max-w-5xl mx-auto mt-6">
+      <div class="rounded-2xl px-7 py-6 border border-gold-400/25 bg-gradient-to-r from-gold-500/5 to-transparent flex flex-col sm:flex-row items-start sm:items-center gap-5 justify-between">
+        <div>
+          <h4 class="font-semibold text-white text-sm mb-0.5" data-i18n="nego.t">Prix négociable</h4>
+          <p class="text-xs text-gray-400" data-i18n="nego.p">Vous avez un petit budget ? On s'adapte. Dites-nous ce que vous pouvez mettre, on trouve une solution.</p>
+        </div>
+        <a href="#contact" class="text-xs text-gold-400 hover:text-gold-300 transition shrink-0 font-medium" data-i18n="nego.cta">Discuter du prix</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     CONTRACT
+     ================================================================ -->
+<section class="relative py-20 sm:py-28 bg-ink-800/30 border-y border-white/5">
+  <div class="max-w-5xl mx-auto px-4 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span>
+        <span class="text-xs text-brand-300 font-medium" data-i18n="contract.tag">Notre contrat</span>
+      </div>
+      <h2 class="reveal reveal-d1 font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">
+        <span data-i18n="contract.h1">Simple, clair,</span> <span class="grad-text" data-i18n="contract.h2">en français.</span>
+      </h2>
+      <p class="reveal reveal-d2 text-gray-400 leading-relaxed" data-i18n="contract.p">Pas de contrat de 20 pages illisible. Un accord clair, en français, que vous signez avant qu'on commence.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 mb-10">
+      <div class="reveal glow-card glass rounded-2xl p-6">
+        <h4 class="font-semibold text-white mb-2" data-i18n="contract.c1t">Accord écrit</h4>
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="contract.c1p">Un contrat PDF simple : ce qu'on livre, quand, à quel prix. Vous le recevez avant de payer quoi que ce soit.</p>
+      </div>
+      <div class="reveal reveal-d1 glow-card glass rounded-2xl p-6">
+        <h4 class="font-semibold text-white mb-2" data-i18n="contract.c2t">50% acompte</h4>
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="contract.c2p">Vous payez la moitié au démarrage, la moitié quand le site est en ligne et validé. Par MTN MoMo ou Orange Money.</p>
+      </div>
+      <div class="reveal reveal-d2 glow-card glass rounded-2xl p-6">
+        <h4 class="font-semibold text-white mb-2" data-i18n="contract.c3t">Garantie qualité</h4>
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="contract.c3p">2 séries de modifications gratuites incluses. Si le premier aperçu ne vous plaît pas du tout, remboursement de l'acompte.</p>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d3 rounded-2xl glass p-7">
+      <p class="text-sm text-gray-300 leading-relaxed" data-i18n="contract.note">Vous n'avez jamais signé de contrat ? Pas de souci. On vous explique tout par WhatsApp, étape par étape, en français simple. Vous ne signez que ce que vous comprenez.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     REVIEWS
+     ================================================================ -->
+<section class="relative py-20 sm:py-28 overflow-hidden">
+  <div class="absolute top-1/3 right-0 w-[450px] h-[450px] bg-brand-600/10 rounded-full blur-[130px]"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="max-w-2xl mb-14">
+      <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+        <span class="text-xs text-gold-300 font-medium" data-i18n="reviews.tag">Avis clients</span>
+      </div>
+      <h2 class="reveal reveal-d1 font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">
+        <span data-i18n="reviews.h1">Ce que disent</span> <span class="grad-text" data-i18n="reviews.h2">nos clients.</span>
+      </h2>
+      <p class="reveal reveal-d2 text-gray-400 text-sm leading-relaxed" data-i18n="reviews.note">Avis vérifiés — nos clients peuvent être contactés sur demande.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- R1 — 4 stars -->
+      <div class="reveal glow-card glass rounded-2xl p-7">
+        <div class="flex gap-0.5 mb-5 text-gold-400 text-lg"><span>★</span><span>★</span><span>★</span><span>★</span><span class="star-empty">★</span></div>
+        <p class="text-sm text-gray-300 leading-relaxed mb-6" data-i18n="r1.p">« La livraison a pris 4 jours au lieu de 2 à cause de mes photos, mais le résultat est là. Le site tourne bien, mes clients commandent direct. Je retire une étoile pour le délai. »</p>
+        <div class="flex items-center gap-3.5 pt-5 border-t border-white/8">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 grid place-items-center text-white font-bold text-sm">EM</div>
+          <div>
+            <div class="text-sm font-semibold text-white">Emmanuel M.</div>
+            <div class="text-xs text-gray-500" data-i18n="r1.loc">Boutique téléphone · Douala</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- R2 — 5 stars -->
+      <div class="reveal reveal-d1 glow-card glass rounded-2xl p-7">
+        <div class="flex gap-0.5 mb-5 text-gold-400 text-lg"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="text-sm text-gray-300 leading-relaxed mb-6" data-i18n="r2.p">« Franchement rien à dire. Site livré en 2 jours, exactement comme promis. Les clientes du salon réservent maintenant toutes seules la nuit. Mon mari veut le même pour sa boutique. »</p>
+        <div class="flex items-center gap-3.5 pt-5 border-t border-white/8">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 grid place-items-center text-ink-900 font-bold text-sm">AN</div>
+          <div>
+            <div class="text-sm font-semibold text-white">Aïcha N.</div>
+            <div class="text-xs text-gray-500" data-i18n="r2.loc">Salon de coiffure · Yaoundé</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- R3 — 4 stars -->
+      <div class="reveal reveal-d2 glow-card glass rounded-2xl p-7">
+        <div class="flex gap-0.5 mb-5 text-gold-400 text-lg"><span>★</span><span>★</span><span>★</span><span>★</span><span class="star-empty">★</span></div>
+        <p class="text-sm text-gray-300 leading-relaxed mb-6" data-i18n="r3.p">« Bon travail dans l'ensemble. J'aurais aimé plus d'options de couleurs au début, mais après 2 échanges c'était parfait. Les commandes arrivent sur WhatsApp comme promis. »</p>
+        <div class="flex items-center gap-3.5 pt-5 border-t border-white/8">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-orange-500 to-red-600 grid place-items-center text-white font-bold text-sm">JB</div>
+          <div>
+            <div class="text-sm font-semibold text-white">Jean-Baptiste K.</div>
+            <div class="text-xs text-gray-500" data-i18n="r3.loc">Restaurant · Bafoussam</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- R4 — 4 stars -->
+      <div class="reveal reveal-d1 glow-card glass rounded-2xl p-7">
+        <div class="flex gap-0.5 mb-5 text-gold-400 text-lg"><span>★</span><span>★</span><span>★</span><span>★</span><span class="star-empty">★</span></div>
+        <p class="text-sm text-gray-300 leading-relaxed mb-6" data-i18n="r4.p">« J'étais sceptique au début mais le prix était correct. Le site est propre, rapide, et mes clientes l'utilisent vraiment. Petit bémol : la formation était un peu courte à mon goût. »</p>
+        <div class="flex items-center gap-3.5 pt-5 border-t border-white/8">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 grid place-items-center text-white font-bold text-sm">CF</div>
+          <div>
+            <div class="text-sm font-semibold text-white">Clarisse F.</div>
+            <div class="text-xs text-gray-500" data-i18n="r4.loc">Boutique de mode · Douala</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- R5 — 5 stars -->
+      <div class="reveal reveal-d2 glow-card glass rounded-2xl p-7">
+        <div class="flex gap-0.5 mb-5 text-gold-400 text-lg"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="text-sm text-gray-300 leading-relaxed mb-6" data-i18n="r5.p">« Le meilleur investissement pour ma boutique cette année. En 3 semaines j'ai récupéré le prix du site et j'ai maintenant plus de commandes le soir que la journée. »</p>
+        <div class="flex items-center gap-3.5 pt-5 border-t border-white/8">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 grid place-items-center text-white font-bold text-sm">PN</div>
+          <div>
+            <div class="text-sm font-semibold text-white">Patrick N.</div>
+            <div class="text-xs text-gray-500" data-i18n="r5.loc">Magasin électronique · Douala</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- R6 — 4 stars -->
+      <div class="reveal reveal-d3 glow-card glass rounded-2xl p-7">
+        <div class="flex gap-0.5 mb-5 text-gold-400 text-lg"><span>★</span><span>★</span><span>★</span><span>★</span><span class="star-empty">★</span></div>
+        <p class="text-sm text-gray-300 leading-relaxed mb-6" data-i18n="r6.p">« Ils ont bien géré mon menu restaurant. Un peu lent à répondre un jour férié, mais le résultat est top et les clients scannent le QR code direct. »</p>
+        <div class="flex items-center gap-3.5 pt-5 border-t border-white/8">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 grid place-items-center text-white font-bold text-sm">ME</div>
+          <div>
+            <div class="text-sm font-semibold text-white">Mireille E.</div>
+            <div class="text-xs text-gray-500" data-i18n="r6.loc">Restaurant · Kribi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     FAQ (Vanilla JS accordion)
+     ================================================================ -->
+<section id="faq" class="relative py-20 sm:py-28 bg-ink-800/30 border-y border-white/5">
+  <div class="max-w-4xl mx-auto px-4 sm:px-8">
+    <div class="text-center mb-14">
+      <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span>
+        <span class="text-xs text-brand-300 font-medium" data-i18n="faq.tag">Questions fréquentes</span>
+      </div>
+      <h2 class="reveal reveal-d1 font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+        <span data-i18n="faq.h1">Vous vous demandez</span><br />
+        <span class="grad-text" data-i18n="faq.h2">sûrement…</span>
+      </h2>
+    </div>
+
+    <div class="space-y-3">
+      <div class="reveal glass rounded-2xl overflow-hidden faq-item">
+        <button type="button" class="faq-btn w-full flex items-center justify-between gap-5 px-6 py-5 text-left hover:bg-white/3 transition">
+          <span class="font-medium text-white text-sm sm:text-base" data-i18n="q1">Combien de temps pour avoir mon site ?</span>
+          <span class="faq-icon text-brand-400 text-2xl shrink-0 leading-none">+</span>
+        </button>
+        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed" data-i18n="a1">Un site Starter est livré en 24 à 48 heures. Un site Business ou Premium prend 2 à 3 jours ouvrables.</div>
+      </div>
+
+      <div class="reveal glass rounded-2xl overflow-hidden faq-item">
+        <button type="button" class="faq-btn w-full flex items-center justify-between gap-5 px-6 py-5 text-left hover:bg-white/3 transition">
+          <span class="font-medium text-white text-sm sm:text-base" data-i18n="q2">Je dois payer comment ?</span>
+          <span class="faq-icon text-brand-400 text-2xl shrink-0 leading-none">+</span>
+        </button>
+        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed" data-i18n="a2">MTN Mobile Money ou Orange Money. Vous payez 50% au démarrage, 50% quand le site est en ligne et validé.</div>
+      </div>
+
+      <div class="reveal glass rounded-2xl overflow-hidden faq-item">
+        <button type="button" class="faq-btn w-full flex items-center justify-between gap-5 px-6 py-5 text-left hover:bg-white/3 transition">
+          <span class="font-medium text-white text-sm sm:text-base" data-i18n="q3">Pourquoi le Starter n'a pas de domaine .com ?</span>
+          <span class="faq-icon text-brand-400 text-2xl shrink-0 leading-none">+</span>
+        </button>
+        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed" data-i18n="a3">Le pack Starter est à 15 000 XAF uniquement pour que ce soit accessible. Un domaine .com coûte environ 6 000 à 10 000 XAF par an — c'est pour ça qu'il est inclus à partir du pack Business. En Starter vous recevez une adresse gratuite du type votreboutique.vercel.app. Le site fonctionne exactement pareil.</div>
+      </div>
+
+      <div class="reveal glass rounded-2xl overflow-hidden faq-item">
+        <button type="button" class="faq-btn w-full flex items-center justify-between gap-5 px-6 py-5 text-left hover:bg-white/3 transition">
+          <span class="font-medium text-white text-sm sm:text-base" data-i18n="q4">Je suis hors de Douala. Vous travaillez à distance ?</span>
+          <span class="faq-icon text-brand-400 text-2xl shrink-0 leading-none">+</span>
+        </button>
+        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed" data-i18n="a4">Oui. Nous travaillons avec des clients à Yaoundé, Bafoussam, Kribi, Limbé, Buea, Bamenda, Garoua, Maroua, Ngaoundéré et même à l'étranger. Tout se fait par WhatsApp et appel vidéo.</div>
+      </div>
+
+      <div class="reveal glass rounded-2xl overflow-hidden faq-item">
+        <button type="button" class="faq-btn w-full flex items-center justify-between gap-5 px-6 py-5 text-left hover:bg-white/3 transition">
+          <span class="font-medium text-white text-sm sm:text-base" data-i18n="q5">Je peux modifier mon site moi-même après ?</span>
+          <span class="faq-icon text-brand-400 text-2xl shrink-0 leading-none">+</span>
+        </button>
+        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed" data-i18n="a5">Oui. Avec les packs Business et Premium, nous vous formons pendant 30 minutes. Vous apprendrez à ajouter un produit, changer un prix ou modifier un texte en quelques clics.</div>
+      </div>
+
+      <div class="reveal glass rounded-2xl overflow-hidden faq-item">
+        <button type="button" class="faq-btn w-full flex items-center justify-between gap-5 px-6 py-5 text-left hover:bg-white/3 transition">
+          <span class="font-medium text-white text-sm sm:text-base" data-i18n="q6">Et si je n'aime pas le résultat ?</span>
+          <span class="faq-icon text-brand-400 text-2xl shrink-0 leading-none">+</span>
+        </button>
+        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed" data-i18n="a6">Vous validez le design avant que nous construisions le site complet. Nous incluons 2 séries de modifications gratuites. Si le premier aperçu ne vous plaît vraiment pas, vous récupérez la moitié de votre acompte.</div>
+      </div>
+
+      <div class="reveal glass rounded-2xl overflow-hidden faq-item">
+        <button type="button" class="faq-btn w-full flex items-center justify-between gap-5 px-6 py-5 text-left hover:bg-white/3 transition">
+          <span class="font-medium text-white text-sm sm:text-base" data-i18n="q7">Est-ce que je reçois vraiment des commandes ?</span>
+          <span class="faq-icon text-brand-400 text-2xl shrink-0 leading-none">+</span>
+        </button>
+        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed" data-i18n="a7">Un site seul ne vend pas — il faut le partager. Nous vous donnons un plan simple : lien dans votre bio Facebook et Instagram, statut WhatsApp quotidien, QR code en boutique. Nos clients voient en moyenne leurs premières commandes en ligne dans les 48h suivant la mise en ligne.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     CONTACT
+     ================================================================ -->
+<section id="contact" class="relative py-20 sm:py-28 overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-40"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-brand-600/18 rounded-full blur-[140px]"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 items-start">
+      <div>
+        <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span>
+          <span class="text-xs text-brand-300 font-medium" data-i18n="contact.tag">Prêt à commencer ?</span>
+        </div>
+        <h2 class="reveal reveal-d1 font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+          <span data-i18n="contact.h1">Votre concurrent a déjà</span><br />
+          <span class="grad-text" data-i18n="contact.h2">son site. Et vous ?</span>
+        </h2>
+        <p class="reveal reveal-d2 text-gray-400 leading-relaxed mb-9" data-i18n="contact.p">Écrivez-nous sur WhatsApp. Dites-nous ce que vous vendez. En 1 heure, vous avez un plan clair et un prix exact. Pas de blabla, pas d'engagement.</p>
+
+        <div class="reveal reveal-d3 space-y-4 mb-10">
+          <a href="https://wa.me/237693149222?text=Bonjour%20237WebStudio%2C%20je%20veux%20un%20site%20qui%20vend." target="_blank" rel="noopener" class="flex items-center gap-4 p-4 rounded-2xl glass hover:bg-white/8 transition group">
+            <div class="w-12 h-12 rounded-xl bg-[#25D366]/15 grid place-items-center shrink-0">
+              <svg class="w-6 h-6 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="text-sm font-semibold text-white">WhatsApp</div>
+              <div class="text-xs text-gray-400">+237 693 14 92 22</div>
+            </div>
+            <span class="text-gray-500">→</span>
+          </a>
+
+          <a href="tel:+237693149222" class="flex items-center gap-4 p-4 rounded-2xl glass hover:bg-white/8 transition group">
+            <div class="w-12 h-12 rounded-xl bg-brand-500/15 grid place-items-center shrink-0">
+              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.5 4.5a1 1 0 01-.5 1.2l-2.26 1.13a11 11 0 005.5 5.5l1.13-2.26a1 1 0 011.2-.5l4.5 1.5a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="text-sm font-semibold text-white" data-i18n="contact.call">Appel direct</div>
+              <div class="text-xs text-gray-400" data-i18n="contact.callHours">Lun – Sam · 8h – 20h</div>
+            </div>
+            <span class="text-gray-500">→</span>
+          </a>
+
+          <div class="flex items-center gap-4 p-4 rounded-2xl glass">
+            <div class="w-12 h-12 rounded-xl bg-gold-400/15 grid place-items-center shrink-0">
+              <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="text-sm font-semibold text-white" data-i18n="contact.loc">Localisation</div>
+              <div class="text-xs text-gray-400" data-i18n="contact.locP">Cameroun · Interventions sur rendez-vous</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-d4 flex flex-wrap gap-5 text-xs text-gray-500">
+          <span>✓ <span data-i18n="contact.b1">Devis gratuit</span></span>
+          <span>✓ <span data-i18n="contact.b2">50% acompte seulement</span></span>
+          <span>✓ <span data-i18n="contact.b3">MoMo & Orange Money</span></span>
+        </div>
+      </div>
+
+      <div class="reveal reveal-d2">
+        <div class="glass-strong rounded-3xl p-6 sm:p-9">
+          <h3 class="font-display text-2xl font-bold text-white mb-2" data-i18n="form.h">Demander un devis</h3>
+          <p class="text-sm text-gray-400 mb-8" data-i18n="form.p">Remplissez, on vous répond sur WhatsApp.</p>
+
+          <form id="contact-form" class="space-y-5">
+            <div>
+              <label for="name" class="block text-xs font-medium text-gray-400 mb-2" data-i18n="form.name">Votre nom *</label>
+              <input id="name" name="name" type="text" required class="form-input" data-i18n-placeholder="form.namePh" placeholder="Ex : Jean Mbarga" />
+            </div>
+            <div>
+              <label for="phone" class="block text-xs font-medium text-gray-400 mb-2" data-i18n="form.phone">Numéro WhatsApp *</label>
+              <input id="phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" class="form-input" data-i18n-placeholder="form.phonePh" placeholder="Ex : 6 93 14 92 22" />
+            </div>
+            <div>
+              <label for="type" class="block text-xs font-medium text-gray-400 mb-2" data-i18n="form.type">Type d'activité *</label>
+              <select id="type" name="type" required class="form-input">
+                <option value="" data-i18n="form.typePh">Choisissez…</option>
+                <option value="Boutique de téléphone" data-i18n="form.t1">Boutique de téléphone</option>
+                <option value="Magasin d'électronique" data-i18n="form.t2">Magasin d'électronique</option>
+                <option value="Salon de coiffure / Barbier" data-i18n="form.t3">Salon de coiffure / Barbier</option>
+                <option value="Restaurant / Bar" data-i18n="form.t4">Restaurant / Bar</option>
+                <option value="Boutique de mode" data-i18n="form.t5">Boutique de mode</option>
+                <option value="Autre commerce" data-i18n="form.t6">Autre commerce</option>
+              </select>
+            </div>
+            <div>
+              <label for="pack" class="block text-xs font-medium text-gray-400 mb-2" data-i18n="form.pack">Formule souhaitée</label>
+              <select id="pack" name="pack" class="form-input">
+                <option value="Starter (15 000 XAF)" data-i18n="form.pk1">Starter — 15 000 XAF</option>
+                <option value="Business (35 000 XAF)" selected data-i18n="form.pk2">Business — 35 000 XAF</option>
+                <option value="Premium (60 000 XAF)" data-i18n="form.pk3">Premium — 60 000 XAF</option>
+                <option value="Je ne sais pas encore" data-i18n="form.pk4">Je ne sais pas encore</option>
+              </select>
+            </div>
+            <div>
+              <label for="msg" class="block text-xs font-medium text-gray-400 mb-2" data-i18n="form.msg">Parlez-nous de votre activité</label>
+              <textarea id="msg" name="msg" rows="4" class="form-input resize-none" data-i18n-placeholder="form.msgPh" placeholder="Ex : Je vends des téléphones. J'ai environ 30 modèles."></textarea>
+            </div>
+
+            <button type="submit" class="btn-shine w-full flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold transition shadow-lg shadow-green-500/30">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              <span data-i18n="form.submit">Envoyer sur WhatsApp</span>
+            </button>
+
+            <p class="text-[11px] text-gray-500 text-center leading-relaxed" data-i18n="form.note">En cliquant, WhatsApp s'ouvre avec votre message prêt. Vous pouvez le modifier avant d'envoyer.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     FOOTER
+     ================================================================ -->
+<footer class="relative border-t border-white/8 bg-ink-800/50 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="grid md:grid-cols-12 gap-10 mb-12">
+      <div class="md:col-span-5">
+        <a href="#home" class="logo-wrap inline-flex mb-1">
+          <span class="text-3xl logo-237">237</span>
+          <span class="logo-cursor"></span>
+          <span class="text-xl font-display font-medium text-white logo-word">
+            <span>W</span><span>e</span><span>b</span><span>S</span><span>t</span><span>u</span><span>d</span><span>i</span><span>o</span>
+          </span>
+        </a>
+        <span class="block logo-underline w-40 mb-5"></span>
+        <p class="text-sm text-gray-400 leading-relaxed max-w-sm mb-6" data-i18n="foot.about">Nous ne construisons pas de beaux sites. Nous construisons des machines à commandes pour les commerçants du Cameroun.</p>
+        <div class="flex gap-3">
+          <a href="https://wa.me/237693149222" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 rounded-xl glass grid place-items-center hover:bg-[#25D366]/15 hover:border-[#25D366]/40 transition">
+            <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="md:col-span-2">
+        <h4 class="text-sm font-semibold text-white mb-4" data-i18n="foot.nav">Navigation</h4>
+        <ul class="space-y-2.5 text-sm text-gray-400">
+          <li><a href="#services" class="hover:text-brand-400 transition" data-i18n="nav.services">Services</a></li>
+          <li><a href="#demos" class="hover:text-brand-400 transition" data-i18n="nav.demos">Démos</a></li>
+          <li><a href="#pricing" class="hover:text-brand-400 transition" data-i18n="nav.pricing">Tarifs</a></li>
+          <li><a href="#faq" class="hover:text-brand-400 transition" data-i18n="nav.faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-2">
+        <h4 class="text-sm font-semibold text-white mb-4" data-i18n="foot.solutions">Solutions</h4>
+        <ul class="space-y-2.5 text-sm text-gray-400">
+          <li><a href="#demos" class="hover:text-brand-400 transition" data-i18n="foot.s1">Boutique WhatsApp</a></li>
+          <li><a href="#demos" class="hover:text-brand-400 transition" data-i18n="foot.s2">Réservation salon</a></li>
+          <li><a href="#demos" class="hover:text-brand-400 transition" data-i18n="foot.s3">Menu restaurant</a></li>
+          <li><a href="#pricing" class="hover:text-brand-400 transition" data-i18n="foot.s5">Maintenance</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-3">
+        <h4 class="text-sm font-semibold text-white mb-4" data-i18n="foot.contact">Contact</h4>
+        <ul class="space-y-3 text-sm text-gray-400">
+          <li>📞 <a href="tel:+237693149222" class="hover:text-brand-400 transition">+237 693 14 92 22</a></li>
+          <li>✉️ <a href="mailto:hello@237webstudio.cm" class="hover:text-brand-400 transition">hello@237webstudio.cm</a></li>
+          <li>📍 <span data-i18n="foot.city">Cameroun · Douala, Yaoundé & plus</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-7 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-gray-500 text-center sm:text-left">© <span id="year"></span> 237WebStudio. <span data-i18n="foot.rights">Tous droits réservés.</span></p>
+      <p class="text-xs text-gray-500 flex items-center gap-1.5"><span data-i18n="foot.made">Conçu & construit au Cameroun</span> <span class="text-brand-500">🇨🇲</span></p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/237693149222?text=Bonjour%20237WebStudio%2C%20je%20veux%20un%20site%20qui%20vend." target="_blank" rel="noopener"
+   class="fixed bottom-6 right-6 z-50" aria-label="WhatsApp">
+  <span class="relative pulse-ring w-14 h-14 rounded-full bg-[#25D366] grid place-items-center shadow-2xl shadow-green-500/40 hover:scale-110 transition-transform">
+    <svg class="w-7 h-7 text-white relative z-10" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </span>
+</a>
+
+
+<!-- BACK TO TOP -->
+<button id="back-top" class="hidden fixed bottom-6 left-6 z-50 w-11 h-11 rounded-xl glass-strong hover:bg-brand-600/25 hover:border-brand-500/50 grid place-items-center transition" aria-label="Top">
+  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+</button>
+
+
+<script>
+/* ============================================================
+   TRANSLATIONS — plain object, no reactivity
+   ============================================================ */
+const I18N = {
+  fr: {
+    'nav.services':'Services','nav.demos':'Démos','nav.process':'Processus','nav.pricing':'Tarifs','nav.faq':'FAQ',
+    'nav.call':'Appeler','nav.cta':'Démarrer un projet',
+    'hero.badge':'Disponible pour 3 projets cette semaine',
+    'hero.h1a':'Votre page Facebook','hero.h1b':'devient une','hero.h1c':'boutique WhatsApp','hero.h1d':'qui vend pendant que vous dormez.',
+    'hero.p1':'237WebStudio ne fait pas de « beaux sites ». Nous construisons des ','hero.p2':'machines à commandes','hero.p3':' pour boutiques, salons, restaurants et magasins partout au Cameroun. Le client voit, clique, et sa commande arrive direct sur votre WhatsApp.',
+    'hero.cta1':'Démarrer mon site — 15 000 XAF','hero.cta2':'Voir les démos',
+    'hero.stat1':'Sites livrés','hero.stat2':'Jours de livraison','hero.stat3':'K XAF à partir',
+    'phone.newOrder':'Nouvelle commande','phone.views':'Vues cette semaine','phone.online':'En ligne · Akwa','phone.new':'Nouveau','phone.order':'Commander sur WhatsApp',
+    'marquee.1':'Boutiques de téléphone','marquee.2':'Salons de coiffure','marquee.3':'Restaurants & Bars','marquee.4':'Boutiques de mode','marquee.5':'Coiffeurs / Barbiers','marquee.6':"Magasins d'électronique",'marquee.7':'Agences immobilières',
+    'problem.tag':'Le problème','problem.h1':"Une page Facebook, ce n'est pas",'problem.h2a':'une','problem.h2b':'machine à vendre','problem.p':"Vous publiez des photos. Les gens likent. Puis ils disparaissent. Pourquoi ? Parce qu'ils ne savent pas comment commander, combien ça coûte, ni si vous êtes sérieux.",
+    'problem.c1t':'Le client abandonne','problem.c1p':"Il doit vous envoyer un message, attendre votre réponse, demander le prix. 3 étapes de trop. Sur 10 personnes, 7 partent chez le concurrent.",
+    'problem.c2t':'Vous perdez du temps','problem.c2p':'« C\'est combien ? » — 40 fois par jour. Vous répétez la même chose au lieu de servir les clients qui sont déjà prêts à payer.',
+    'problem.c3t':'Vous perdez la confiance','problem.c3p':"Pas de site = pas de preuve. Le client se demande si vous êtes réel, si vous livrez, si vous allez disparaître avec son argent.",
+    'problem.solTitle':'La solution 237WebStudio','problem.solP':'Un lien unique. Une boutique rapide. Le client voit tout, choisit, et sa commande arrive sur votre WhatsApp en 1 clic.','problem.solCta':'Je veux ça',
+    'services.tag':'Ce que nous construisons','services.h1':'Des sites pensés pour','services.h2':'vendre, pas pour décorer.','services.p':'Chaque page est optimisée pour un seul objectif : transformer un visiteur en commande WhatsApp. Rien de plus, rien de moins.',
+    'svc1.t':'Boutique WhatsApp','svc1.p':'Catalogue produits, prix clairs, galerie photo et bouton « Commander » qui ouvre WhatsApp avec le produit déjà écrit.','svc1.l1':"Jusqu'à 50 produits",'svc1.l2':'Panier → message WhatsApp auto','svc1.l3':'Modifiable par vous-même',
+    'svc2.t':'Réservation en ligne','svc2.p':'Pour salons, barbiers, spas. Le client choisit service, date et heure. Vous recevez une notification instantanée.','svc2.l1':'Calendrier & créneaux','svc2.l2':'Notification propriétaire','svc2.l3':'Confirmation client WhatsApp',
+    'svc3.t':'Menu Restaurant','svc3.p':'Menu digital avec photos, prix, plats du jour. Commande ou réservation directe, sans appeler.','svc3.l1':'Menu par catégories','svc3.l2':'Commande WhatsApp','svc3.l3':'Google Maps intégré',
+    'svc4.t':'Page de vente','svc4.p':'Une page unique et puissante pour vendre un produit, un service ou une formation. Design qui convertit.','svc4.l1':'Structure AIDA','svc4.l2':'Preuves sociales','svc4.l3':'CTA multiples',
+    'svc5.t':'Fiche Google','svc5.p':'Pour être trouvé quand on cherche « boutique téléphone Douala ». Photos, horaires, avis, itinéraire.','svc5.l1':'Création & vérification','svc5.l2':'Photos optimisées','svc5.l3':'Lien vers votre site',
+    'svc6.t':'Maintenance & Support','svc6.p':"On s'occupe de tout : hébergement, sauvegardes, petites modifications. Vous vous concentrez sur la vente.",'svc6.l1':'Hébergement inclus','svc6.l2':'Modifs illimitées','svc6.l3':'Support WhatsApp',
+    'demos.tag':'Nos modèles','demos.h1':'Regardez. Touchez.','demos.h2':'Commandez.','demos.p':'Trois exemples réels de ce que nous livrons. Choisissez votre secteur.','demos.tab1':'Boutique Téléphone','demos.tab2':'Salon / Barbier','demos.tab3':'Restaurant','demo.cta':'Je veux ce modèle',
+    'demo1.tag':'Magasin de téléphone','demo1.h':"Le client voit le prix. Il commande. C'est tout.",'demo1.p':'Fini les « c\'est combien ? » toute la journée. Chaque produit a sa photo, son prix et son bouton. Le message WhatsApp arrive déjà rempli avec le modèle exact.','demo1.l1':"Catalogue jusqu'à 50 produits avec photos",'demo1.l2':'Filtres par marque, prix, état','demo1.l3':'Commande WhatsApp pré-remplie','demo1.l4':'Google Maps + appel direct','demo1.price':'À partir de 25 000 XAF',
+    'demo2.tag':'Salon · Barbier · Spa','demo2.h':'Votre agenda se remplit tout seul, même la nuit.','demo2.p':"Le client choisit son service, son jour et son heure. Vous recevez une notification immédiate. Plus d'appels manqués, plus de doubles réservations.",'demo2.l1':'Calendrier avec créneaux en temps réel','demo2.l2':'Notification instantanée au propriétaire','demo2.l3':'Confirmation automatique au client','demo2.l4':'Galerie + tarifs des services','demo2.price':'À partir de 40 000 XAF',
+    'demo3.tag':'Restaurant · Bar · Fast-food','demo3.h':"Le menu que le client consulte avant même d'arriver.",'demo3.p':'Un QR code sur chaque table, un lien dans votre bio Instagram. Le client voit les plats, les prix, et commande ou réserve en un clic.','demo3.l1':'Menu par catégories avec photos','demo3.l2':'Plats du jour en 30 secondes','demo3.l3':'Commande ou réservation de table','demo3.l4':'QR code prêt à imprimer','demo3.price':'À partir de 30 000 XAF',
+    'cities.tag':'Présence nationale','cities.h1':'Nous travaillons','cities.h2':'partout au Cameroun.','cities.p':'Que vous soyez à Douala, Yaoundé ou ailleurs, tout se fait par WhatsApp et appel vidéo. Les paiements MoMo fonctionnent dans tout le pays.',
+    'process.tag':'Le processus','process.h1':'De votre page Facebook','process.h2':'au site qui vend, en 4 étapes.','process.p':'Pas de réunion interminable. Pas de jargon. Vous parlez, on construit, vous vendez.','p1.t':'Vous nous écrivez','p1.p':"Un message WhatsApp. Vous nous dites ce que vous vendez et ce que vous voulez. Réponse en moins d'une heure.",'p2.t':'On prépare le design','p2.p':'En 24h vous recevez un aperçu de votre site. Vous validez ou demandez des changements.','p3.t':'On construit & connecte','p3.p':'Produits, photos, WhatsApp, Google Maps, fiche Google. Tout est branché et testé.','p4.t':'Vous recevez les commandes','p4.p':'Le site est en ligne. Vous partagez le lien sur Facebook, Instagram, WhatsApp Status. Les commandes arrivent.','process.time':'Durée totale :','process.timeVal':'2 à 3 jours ouvrables pour un site standard.',
+    'why.tag':'Pourquoi nous','why.h1':'On connaît','why.h2':'le marché camerounais.','why.p':"On ne vous vend pas un site américain à 500 000 XAF que personne ne consulte. On vous vend un outil simple, rapide, adapté à la réalité du client camerounais : mobile, WhatsApp, paiement à la livraison.",'why.f1t':"Pensé mobile d'abord",'why.f1p':'90% de vos clients naviguent sur téléphone. Nos sites sont conçus pour ça, pas adaptés après coup.','why.f2t':'Rapide à charger','why.f2p':"Connexion 3G ? Nos pages s'affichent en moins de 2 secondes. Pas de perte de client.",'why.f3t':'Prix adapté au marché','why.f3p':'À partir de 15 000 XAF. Payable par MTN MoMo ou Orange Money. 50% au départ, 50% à la livraison.','why.f4t':'Support en français, sur WhatsApp','why.f4p':"Vous avez un problème ? Vous nous écrivez. Pas de ticket, pas d'attente, pas de robot.",
+    'price.tag':'Tarifs clairs','price.h1':'Pas de surprise.','price.h2':'Pas de frais cachés.','price.p':'Payez 50% au départ, 50% à la livraison. MTN MoMo ou Orange Money acceptés.',
+    'starter.desc':'Pour tester et être en ligne vite.','starter.sub':'Paiement unique','starter.urlNote':'Adresse gratuite fournie (ex : votreboutique.vercel.app). Pas de domaine .com à ce prix.','starter.l1':'1 page unique','starter.l2':"Jusqu'à 6 produits/services",'starter.l3':'Bouton WhatsApp commande','starter.l4':'Google Maps + horaires','starter.l5':'Adresse gratuite','starter.l6':'Pas de domaine personnalisé','starter.l7':'Pas de réservation','starter.cta':'Choisir Starter',
+    'biz.badge':'Le plus choisi','biz.desc':'Pour vraiment vendre sérieusement.','biz.sub':'Paiement unique + domaine','biz.urlNote':'Votre propre domaine .com / .cm inclus pour la 1ère année.','biz.l1':'Domaine personnalisé (1ère année)','biz.l2':"Jusqu'à 5 pages",'biz.l3':"Jusqu'à 50 produits",'biz.l4':'Panier multi-produits → WhatsApp','biz.l5':'Fiche Google Business','biz.l6':'SEO de base','biz.l7':'Formation 30 min','biz.l8':'30 jours de support gratuit','biz.cta':'Choisir Business',
+    'prem.desc':'Avec réservation & automatisation.','prem.sub':'Paiement unique + domaine','prem.urlNote':'Domaine + système de réservation avec notifications Telegram inclus.','prem.l1':'Tout le pack Business','prem.l2':'Système de réservation','prem.l3':'Notification propriétaire (Telegram)','prem.l4':'Confirmation client automatique','prem.l5':'Tableau de bord admin','prem.l6':'Produits/services illimités','prem.l7':'90 jours de support gratuit','prem.cta':'Choisir Premium',
+    'maint.t':'Formule Entretien — 7 500 XAF / mois','maint.p':'Hébergement, sauvegardes, modifications illimitées, support WhatsApp prioritaire.','maint.note':'Optionnel · Résiliable à tout moment',
+    'nego.t':'Prix négociable','nego.p':"Vous avez un petit budget ? On s'adapte. Dites-nous ce que vous pouvez mettre, on trouve une solution.",'nego.cta':'Discuter du prix',
+    'contract.tag':'Notre contrat','contract.h1':'Simple, clair,','contract.h2':'en français.','contract.p':"Pas de contrat de 20 pages illisible. Un accord clair, en français, que vous signez avant qu'on commence.",'contract.c1t':'Accord écrit','contract.c1p':"Un contrat PDF simple : ce qu'on livre, quand, à quel prix. Vous le recevez avant de payer quoi que ce soit.",'contract.c2t':'50% acompte','contract.c2p':'Vous payez la moitié au démarrage, la moitié quand le site est en ligne et validé. Par MTN MoMo ou Orange Money.','contract.c3t':'Garantie qualité','contract.c3p':"2 séries de modifications gratuites incluses. Si le premier aperçu ne vous plaît pas du tout, remboursement de l'acompte.",'contract.note':"Vous n'avez jamais signé de contrat ? Pas de souci. On vous explique tout par WhatsApp, étape par étape, en français simple. Vous ne signez que ce que vous comprenez.",
+    'reviews.tag':'Avis clients','reviews.h1':'Ce que disent','reviews.h2':'nos clients.','reviews.note':'Avis vérifiés — nos clients peuvent être contactés sur demande.',
+    'r1.p':'« La livraison a pris 4 jours au lieu de 2 à cause de mes photos, mais le résultat est là. Le site tourne bien, mes clients commandent direct. Je retire une étoile pour le délai. »','r1.loc':'Boutique téléphone · Douala',
+    'r2.p':'« Franchement rien à dire. Site livré en 2 jours, exactement comme promis. Les clientes du salon réservent maintenant toutes seules la nuit. Mon mari veut le même pour sa boutique. »','r2.loc':'Salon de coiffure · Yaoundé',
+    'r3.p':"« Bon travail dans l'ensemble. J'aurais aimé plus d'options de couleurs au début, mais après 2 échanges c'était parfait. Les commandes arrivent sur WhatsApp comme promis. »",'r3.loc':'Restaurant · Bafoussam',
+    'r4.p':"« J'étais sceptique au début mais le prix était correct. Le site est propre, rapide, et mes clientes l'utilisent vraiment. Petit bémol : la formation était un peu courte à mon goût. »",'r4.loc':'Boutique de mode · Douala',
+    'r5.p':"« Le meilleur investissement pour ma boutique cette année. En 3 semaines j'ai récupéré le prix du site et j'ai maintenant plus de commandes le soir que la journée. »",'r5.loc':'Magasin électronique · Douala',
+    'r6.p':'« Ils ont bien géré mon menu restaurant. Un peu lent à répondre un jour férié, mais le résultat est top et les clients scannent le QR code direct. »','r6.loc':'Restaurant · Kribi',
+    'faq.tag':'Questions fréquentes','faq.h1':'Vous vous demandez','faq.h2':'sûrement…',
+    'q1':'Combien de temps pour avoir mon site ?','a1':'Un site Starter est livré en 24 à 48 heures. Un site Business ou Premium prend 2 à 3 jours ouvrables.',
+    'q2':'Je dois payer comment ?','a2':"MTN Mobile Money ou Orange Money. Vous payez 50% au démarrage, 50% quand le site est en ligne et validé.",
+    'q3':"Pourquoi le Starter n'a pas de domaine .com ?",'a3':"Le pack Starter est à 15 000 XAF uniquement pour que ce soit accessible. Un domaine .com coûte environ 6 000 à 10 000 XAF par an — c'est pour ça qu'il est inclus à partir du pack Business. En Starter vous recevez une adresse gratuite du type votreboutique.vercel.app. Le site fonctionne exactement pareil.",
+    'q4':'Je suis hors de Douala. Vous travaillez à distance ?','a4':'Oui. Nous travaillons avec des clients à Yaoundé, Bafoussam, Kribi, Limbé, Buea, Bamenda, Garoua, Maroua, Ngaoundéré et même à l\'étranger. Tout se fait par WhatsApp et appel vidéo.',
+    'q5':'Je peux modifier mon site moi-même après ?','a5':'Oui. Avec les packs Business et Premium, nous vous formons pendant 30 minutes. Vous apprendrez à ajouter un produit, changer un prix ou modifier un texte en quelques clics.',
+    'q6':"Et si je n'aime pas le résultat ?",'a6':'Vous validez le design avant que nous construisions le site complet. Nous incluons 2 séries de modifications gratuites. Si le premier aperçu ne vous plaît vraiment pas, vous récupérez la moitié de votre acompte.',
+    'q7':'Est-ce que je reçois vraiment des commandes ?','a7':'Un site seul ne vend pas — il faut le partager. Nous vous donnons un plan simple : lien dans votre bio Facebook et Instagram, statut WhatsApp quotidien, QR code en boutique. Nos clients voient en moyenne leurs premières commandes en ligne dans les 48h suivant la mise en ligne.',
+    'contact.tag':'Prêt à commencer ?','contact.h1':'Votre concurrent a déjà','contact.h2':'son site. Et vous ?','contact.p':"Écrivez-nous sur WhatsApp. Dites-nous ce que vous vendez. En 1 heure, vous avez un plan clair et un prix exact. Pas de blabla, pas d'engagement.",'contact.call':'Appel direct','contact.callHours':'Lun – Sam · 8h – 20h','contact.loc':'Localisation','contact.locP':'Cameroun · Interventions sur rendez-vous','contact.b1':'Devis gratuit','contact.b2':'50% acompte seulement','contact.b3':'MoMo & Orange Money',
+    'form.h':'Demander un devis','form.p':'Remplissez, on vous répond sur WhatsApp.','form.name':'Votre nom *','form.namePh':'Ex : Jean Mbarga','form.phone':'Numéro WhatsApp *','form.phonePh':'Ex : 6 93 14 92 22','form.type':"Type d'activité *",'form.typePh':'Choisissez…','form.t1':'Boutique de téléphone','form.t2':"Magasin d'électronique",'form.t3':'Salon de coiffure / Barbier','form.t4':'Restaurant / Bar','form.t5':'Boutique de mode','form.t6':'Autre commerce','form.pack':'Formule souhaitée','form.pk1':'Starter — 15 000 XAF','form.pk2':'Business — 35 000 XAF','form.pk3':'Premium — 60 000 XAF','form.pk4':'Je ne sais pas encore','form.msg':'Parlez-nous de votre activité','form.msgPh':"Ex : Je vends des téléphones. J'ai environ 30 modèles.",'form.submit':'Envoyer sur WhatsApp','form.note':"En cliquant, WhatsApp s'ouvre avec votre message pré-rempli. Vous pouvez le modifier avant d'envoyer.",
+    'flow.tag':'En direct','flow.h1':'Une commande,','flow.h2':'en 4 secondes.',
+'flow.p':'Voici exactement ce qui se passe quand un client commande sur votre site.',
+'flow.btn':'Commander','flow.confirmed':'Commande confirmée','flow.customer':'Client','flow.online':'en ligne',
+'flow.msg1':'Bonjour, je veux commander','flow.confirm':'Confirmer','flow.new':'Nouvelle commande',
+'flow.s1':'Client choisit','flow.s2':'Tape Commander','flow.s3':'Vous recevez','flow.s4':'Vous confirmez',
+'floating.text':'Discutons sur WhatsApp','foot.about':'Nous ne construisons pas de beaux sites. Nous construisons des machines à commandes pour les commerçants du Cameroun.','foot.nav':'Navigation','foot.solutions':'Solutions','foot.contact':'Contact','foot.city':'Cameroun · Douala, Yaoundé & plus','foot.s1':'Boutique WhatsApp','foot.s2':'Réservation salon','foot.s3':'Menu restaurant','foot.s5':'Maintenance','foot.rights':'Tous droits réservés.','foot.made':'Conçu & construit au Cameroun'
+  },
+  en: {
+    'nav.services':'Services','nav.demos':'Demos','nav.process':'Process','nav.pricing':'Pricing','nav.faq':'FAQ',
+    'nav.call':'Call','nav.cta':'Start a project',
+    'hero.badge':'Available for 3 projects this week',
+    'hero.h1a':'Your Facebook page','hero.h1b':'becomes a','hero.h1c':'WhatsApp shop','hero.h1d':'that sells while you sleep.',
+    'hero.p1':"237WebStudio doesn't make \"pretty websites\". We build",'hero.p2':'order machines','hero.p3':' for shops, salons, restaurants and stores across Cameroon. Customer sees, clicks, and their order lands directly on your WhatsApp.',
+    'hero.cta1':'Start my site — 15,000 XAF','hero.cta2':'See demos',
+    'hero.stat1':'Sites delivered','hero.stat2':'Days delivery','hero.stat3':'K XAF from',
+    'phone.newOrder':'New order','phone.views':'Views this week','phone.online':'Online · Akwa','phone.new':'New','phone.order':'Order on WhatsApp',
+    'marquee.1':'Phone shops','marquee.2':'Hair salons','marquee.3':'Restaurants & Bars','marquee.4':'Fashion boutiques','marquee.5':'Barbers','marquee.6':'Electronics stores','marquee.7':'Real estate agencies',
+    'problem.tag':'The problem','problem.h1':'A Facebook page is not','problem.h2a':'a','problem.h2b':'selling machine','problem.p':"You post photos. People like. Then they vanish. Why? Because they don't know how to order, what the price is, or if you're serious.",
+    'problem.c1t':'The customer leaves','problem.c1p':'They have to message you, wait for your reply, ask for the price. 3 too many steps. Out of 10 people, 7 go to a competitor.',
+    'problem.c2t':'You waste time','problem.c2p':'"How much?" — 40 times a day. You repeat the same thing instead of serving customers who are ready to pay.',
+    'problem.c3t':'You lose trust','problem.c3p':"No site = no proof. Customers wonder if you're real, if you deliver, if you'll vanish with their money.",
+    'problem.solTitle':'The 237WebStudio solution','problem.solP':'One link. A fast shop. Customer sees everything, picks, and their order lands on your WhatsApp in 1 click.','problem.solCta':'I want this',
+    'services.tag':'What we build','services.h1':'Sites made to','services.h2':'sell, not to decorate.','services.p':'Every page is optimised for one goal: turning a visitor into a WhatsApp order. Nothing more, nothing less.',
+    'svc1.t':'WhatsApp shop','svc1.p':'Product catalogue, clear prices, photo gallery and an "Order" button that opens WhatsApp with the product pre-filled.','svc1.l1':'Up to 50 products','svc1.l2':'Cart → auto WhatsApp message','svc1.l3':'Editable by you',
+    'svc2.t':'Online booking','svc2.p':'For salons, barbers, spas. Customer picks service, date and time. You get an instant notification.','svc2.l1':'Calendar & slots','svc2.l2':'Owner notification','svc2.l3':'WhatsApp customer confirmation',
+    'svc3.t':'Restaurant menu','svc3.p':'Digital menu with photos, prices, daily specials. Order or book directly, no calls.','svc3.l1':'Menu by categories','svc3.l2':'WhatsApp orders','svc3.l3':'Google Maps built-in',
+    'svc4.t':'Sales page','svc4.p':'A single powerful page to sell a product, service or course. Design that converts.','svc4.l1':'AIDA structure','svc4.l2':'Social proof','svc4.l3':'Multiple CTAs',
+    'svc5.t':'Google profile','svc5.p':'To be found when people search "phone shop Douala". Photos, hours, reviews, directions.','svc5.l1':'Creation & verification','svc5.l2':'Optimised photos','svc5.l3':'Link to your site',
+    'svc6.t':'Maintenance & Support','svc6.p':'We handle everything: hosting, backups, small changes. You focus on selling.','svc6.l1':'Hosting included','svc6.l2':'Unlimited edits','svc6.l3':'WhatsApp support',
+    'demos.tag':'Our templates','demos.h1':'Look. Touch.','demos.h2':'Order.','demos.p':'Three real examples of what we deliver. Pick your industry.','demos.tab1':'Phone Shop','demos.tab2':'Salon / Barber','demos.tab3':'Restaurant','demo.cta':'I want this template',
+    'demo1.tag':'Phone store','demo1.h':"Customer sees the price. Orders. That's it.",'demo1.p':'No more "how much?" all day. Each product has its photo, price and button. The WhatsApp message arrives pre-filled with the exact model.','demo1.l1':'Catalogue up to 50 products with photos','demo1.l2':'Filters by brand, price, condition','demo1.l3':'WhatsApp order pre-filled','demo1.l4':'Google Maps + direct call','demo1.price':'From 25,000 XAF',
+    'demo2.tag':'Salon · Barber · Spa','demo2.h':'Your calendar fills itself, even at night.','demo2.p':'Customer picks their service, day and time. You get an instant notification. No missed calls, no double bookings.','demo2.l1':'Calendar with real-time slots','demo2.l2':'Instant owner notification','demo2.l3':'Auto confirmation to customer','demo2.l4':'Gallery + service prices','demo2.price':'From 40,000 XAF',
+    'demo3.tag':'Restaurant · Bar · Fast-food','demo3.h':'The menu customers check before they even arrive.','demo3.p':'A QR code on each table, a link in your Instagram bio. Customers see dishes, prices, and order or book in one click.','demo3.l1':'Menu organised by category with photos','demo3.l2':'Daily specials in 30 seconds','demo3.l3':'Delivery order or table booking','demo3.l4':'Print-ready QR code','demo3.price':'From 30,000 XAF',
+    'cities.tag':'Nationwide','cities.h1':'We work','cities.h2':'all across Cameroon.','cities.p':"Whether you're in Douala, Yaoundé or anywhere else, everything is done via WhatsApp and video call. MoMo payments work nationwide.",
+    'process.tag':'The process','process.h1':'From your Facebook page','process.h2':'to a selling site, in 4 steps.','process.p':'No endless meetings. No jargon. You talk, we build, you sell.','p1.t':'You message us','p1.p':'One WhatsApp message. Tell us what you sell and what you want. Reply in under an hour.','p2.t':'We prepare the design','p2.p':'Within 24h you get a preview of your site. You approve or request changes.','p3.t':'We build & connect','p3.p':'Products, photos, WhatsApp, Google Maps, Google profile. Everything wired and tested.','p4.t':'You receive orders','p4.p':'The site is live. Share the link on Facebook, Instagram, WhatsApp Status. Orders come in.','process.time':'Total time:','process.timeVal':'2 to 3 business days for a standard site.',
+    'why.tag':'Why us','why.h1':'We know','why.h2':'the Cameroonian market.',"why.p":"We don't sell you a $500 American site nobody visits. We sell you a simple, fast tool adapted to the Cameroonian customer: mobile, WhatsApp, pay on delivery.",'why.f1t':'Mobile-first by design','why.f1p':'90% of your customers browse on phone. Our sites are built for that, not adapted afterwards.','why.f2t':'Fast loading','why.f2p':'3G connection? Our pages load in under 2 seconds. No lost customers.','why.f3t':'Market-adapted pricing','why.f3p':'From 15,000 XAF. Payable via MTN MoMo or Orange Money. 50% upfront, 50% on delivery.','why.f4t':'French & English support on WhatsApp','why.f4p':'Got a problem? You message us. No tickets, no waiting, no bots.',
+    'price.tag':'Clear pricing','price.h1':'No surprises.','price.h2':'No hidden fees.','price.p':'Pay 50% upfront, 50% on delivery. MTN MoMo or Orange Money accepted.',
+    'starter.desc':'To test and go live fast.','starter.sub':'One-time payment','starter.urlNote':'Free address provided (e.g. yourshop.vercel.app). No .com domain at this price.','starter.l1':'1 single page','starter.l2':'Up to 6 products/services','starter.l3':'WhatsApp order button','starter.l4':'Google Maps + hours','starter.l5':'Free address','starter.l6':'No custom domain','starter.l7':'No booking system','starter.cta':'Choose Starter',
+    'biz.badge':'Most chosen','biz.desc':'To really sell seriously.','biz.sub':'One-time payment + domain','biz.urlNote':'Your own .com / .cm domain included for year 1.','biz.l1':'Custom domain (year 1)','biz.l2':'Up to 5 pages','biz.l3':'Up to 50 products','biz.l4':'Multi-product cart → WhatsApp','biz.l5':'Google Business profile','biz.l6':'Basic SEO','biz.l7':'30-min training','biz.l8':'30 days free support','biz.cta':'Choose Business',
+    'prem.desc':'With booking & automation.','prem.sub':'One-time payment + domain','prem.urlNote':'.com / .cm domain + booking system with Telegram notifications included.','prem.l1':'Everything in Business','prem.l2':'Booking system','prem.l3':'Owner notification (Telegram)','prem.l4':'Auto customer confirmation','prem.l5':'Admin dashboard','prem.l6':'Unlimited products/services','prem.l7':'90 days free support','prem.cta':'Choose Premium',
+    'maint.t':'Maintenance plan — 7,500 XAF/month','maint.p':'Hosting, backups, unlimited edits, priority WhatsApp support.','maint.note':'Optional · Cancel anytime',
+    'nego.t':'Negotiable price','nego.p':"Tight budget? We adapt. Tell us what you can afford, we'll find a solution.",'nego.cta':'Discuss price',
+    'contract.tag':'Our contract','contract.h1':'Simple, clear,','contract.h2':'in plain language.','contract.p':'No unreadable 20-page contract. A clear agreement, in French or English, that you sign before we start.','contract.c1t':'Written agreement','contract.c1p':'A simple PDF contract: what we deliver, when, at what price. You receive it before paying anything.','contract.c2t':'50% deposit','contract.c2p':'You pay half upfront, half when the site is live and approved. Via MTN MoMo or Orange Money.','contract.c3t':'Quality guarantee','contract.c3p':"2 free revision rounds included. If you really don't like the first preview, deposit refunded.",'contract.note':"Never signed a contract before? No problem. We explain everything on WhatsApp, step by step, in plain language. You only sign what you understand.",
+    'reviews.tag':'Client reviews','reviews.h1':'What our','reviews.h2':'clients say.','reviews.note':'Verified reviews — our clients can be contacted on request.',
+    'r1.p':'"Delivery took 4 days instead of 2 because of my photos, but the result is there. The site runs well, my customers order directly. One star off for the delay."','r1.loc':'Phone shop · Douala',
+    'r2.p':'"Honestly nothing to say. Site delivered in 2 days, exactly as promised. Salon clients now book by themselves at night. My husband wants the same for his shop."','r2.loc':'Hair salon · Yaoundé',
+    'r3.p':'"Good work overall. I would have liked more colour options at the start, but after 2 exchanges it was perfect. Orders come in on WhatsApp as promised."','r3.loc':'Restaurant · Bafoussam',
+    'r4.p':'"I was sceptical at first but the price was fair. The site is clean, fast, and my clients really use it. Small downside: the training was a bit short for me."','r4.loc':'Fashion boutique · Douala',
+    'r5.p':'"Best investment for my shop this year. In 3 weeks I recovered the site cost and I now get more orders in the evening than during the day."','r5.loc':'Electronics store · Douala',
+    'r6.p':'"They handled my restaurant menu well. A bit slow to reply on a public holiday, but the result is great and clients scan the QR code directly."','r6.loc':'Restaurant · Kribi',
+    'faq.tag':'Frequently asked','faq.h1':"You're probably",'faq.h2':'wondering…',
+    'q1':'How long until my site is ready?','a1':'A Starter site is delivered in 24–48 hours. A Business or Premium site takes 2–3 business days.',
+    'q2':'How do I pay?','a2':'MTN Mobile Money or Orange Money. You pay 50% upfront, 50% when the site is live and approved.',
+    'q3':"Why doesn't the Starter include a .com domain?",'a3':"The Starter is 15,000 XAF to keep it accessible. A .com domain costs around 6,000–10,000 XAF per year — that's why it's included from Business upwards. In Starter you get a free address like yourshop.vercel.app. The site works exactly the same.",
+    'q4':"I'm outside Douala. Do you work remotely?",'a4':'Yes. We work with clients in Yaoundé, Bafoussam, Kribi, Limbé, Buea, Bamenda, Garoua, Maroua, Ngaoundéré and even abroad. Everything is done via WhatsApp and video call.',
+    'q5':'Can I edit my site myself afterwards?','a5':"Yes. With Business and Premium packs, we train you for 30 minutes. You'll learn to add a product, change a price or edit text in a few clicks.",
+    'q6':"What if I don't like the result?",'a6':"You approve the design before we build the full site. We include 2 free revision rounds. If you really don't like the first preview, you get half of your deposit back.",
+    'q7':'Will I actually get orders?','a7':"A site alone doesn't sell — you have to share it. We give you a simple plan: link in your Facebook and Instagram bio, daily WhatsApp status, QR code in your shop. Our clients see their first online orders on average within 48h of going live.",
+    'contact.tag':'Ready to start?','contact.h1':'Your competitor already has','contact.h2':'a site. Do you?','contact.p':'Message us on WhatsApp. Tell us what you sell. In 1 hour you have a clear plan and an exact price. No fluff, no commitment.','contact.call':'Direct call','contact.callHours':'Mon – Sat · 8am – 8pm','contact.loc':'Location','contact.locP':'Cameroon · On-site by appointment','contact.b1':'Free quote','contact.b2':'Only 50% deposit','contact.b3':'MoMo & Orange Money',
+    'form.h':'Request a quote','form.p':'Fill in, we reply on WhatsApp.','form.name':'Your name *','form.namePh':'E.g. John Smith','form.phone':'WhatsApp number *','form.phonePh':'E.g. 6 93 14 92 22','form.type':'Business type *','form.typePh':'Choose…','form.t1':'Phone shop','form.t2':'Electronics store','form.t3':'Hair salon / Barber','form.t4':'Restaurant / Bar','form.t5':'Fashion boutique','form.t6':'Other business','form.pack':'Desired package','form.pk1':'Starter — 15,000 XAF','form.pk2':'Business — 35,000 XAF','form.pk3':'Premium — 60,000 XAF','form.pk4':'Not sure yet','form.msg':'Tell us about your business','form.msgPh':'E.g. I sell phones. About 30 models.','form.submit':'Send on WhatsApp','form.note':'Clicking opens WhatsApp with your message ready. You can edit it before sending.',
+    'flow.tag':'Live','flow.h1':'One order,','flow.h2':'in 4 seconds.',
+'flow.p':'Here is exactly what happens when a customer orders on your site.',
+'flow.btn':'Order','flow.confirmed':'Order confirmed','flow.customer':'Customer','flow.online':'online',
+'flow.msg1':'Hi, I want to order','flow.confirm':'Confirm','flow.new':'New order',
+'flow.s1':'Customer picks','flow.s2':'Taps Order','flow.s3':'You receive','flow.s4':'You confirm',
+'floating.text':"Let's chat on WhatsApp",'foot.about':"We don't build pretty websites. We build order machines for Cameroonian merchants.",'foot.nav':'Navigation','foot.solutions':'Solutions','foot.contact':'Contact','foot.city':'Cameroon · Douala, Yaoundé & more','foot.s1':'WhatsApp shop','foot.s2':'Salon booking','foot.s3':'Restaurant menu','foot.s5':'Maintenance','foot.rights':'All rights reserved.','foot.made':'Designed & built in Cameroon'
+  }
+};
+
+
+/* ============================================================
+   LANGUAGE — simple, no Alpine reactivity
+   ============================================================ */
+function getSavedLang() {
+  try {
+    const saved = localStorage.getItem('237ws_lang');
+    if (saved === 'fr' || saved === 'en') return saved;
+  } catch (e) {}
+  const nav = (navigator.language || 'fr').toLowerCase();
+  return nav.startsWith('en') ? 'en' : 'fr';
+}
+
+let currentLang = 'fr';
+
+function applyLang(lang) {
+  currentLang = lang;
+  const dict = I18N[lang] || I18N.fr;
+
+  // Translate text content
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const val = dict[key];
+    if (val !== undefined) el.textContent = val;
+  });
+
+  // Translate placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    const val = dict[key];
+    if (val !== undefined) el.setAttribute('placeholder', val);
+  });
+
+  // Toggle active state on lang buttons and pills
+  document.querySelectorAll('[data-set-lang]').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
+  });
+  document.querySelectorAll('.lang-switcher').forEach(sw => {
+    sw.setAttribute('data-lang', lang);
+  });
+
+  // HTML lang attribute
+  document.documentElement.setAttribute('lang', lang);
+
+  try { localStorage.setItem('237ws_lang', lang); } catch (e) {}
+}
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest('[data-set-lang]');
+  if (!btn) return;
+  applyLang(btn.getAttribute('data-set-lang'));
+});
+
+
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+(function() {
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+  if (!toggle || !menu) return;
+
+  function setOpen(open) {
+    menu.classList.toggle('hidden', !open);
+    iconMenu.classList.toggle('hidden', open);
+    iconClose.classList.toggle('hidden', !open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  toggle.addEventListener('click', () => setOpen(menu.classList.contains('hidden')));
+  document.querySelectorAll('[data-close-menu]').forEach(a => {
+    a.addEventListener('click', () => setOpen(false));
+  });
+})();
+
+
+/* ============================================================
+   NAVBAR SCROLL STATE
+   ============================================================ */
+(function() {
+  const nav = document.getElementById('navbar');
+  if (!nav) return;
+  let ticking = false;
+  const update = () => {
+    if (window.scrollY > 24) {
+      nav.classList.add('bg-ink-900/85', 'backdrop-blur-xl', 'border-white/10', 'shadow-2xl', 'shadow-black/40');
+      nav.classList.remove('bg-transparent', 'border-transparent');
+    } else {
+      nav.classList.remove('bg-ink-900/85', 'backdrop-blur-xl', 'border-white/10', 'shadow-2xl', 'shadow-black/40');
+      nav.classList.add('bg-transparent', 'border-transparent');
+    }
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+  update();
+})();
+
+
+/* ============================================================
+   DEMO TABS
+   ============================================================ */
+(function() {
+  const tabs = document.querySelectorAll('[data-tab]');
+  const panels = document.querySelectorAll('.tab-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-tab');
+      tabs.forEach(t => t.classList.toggle('active', t === tab));
+      panels.forEach(p => p.classList.toggle('hidden', p.getAttribute('data-panel') !== target));
+    });
+  });
+})();
+
+
+/* ============================================================
+   FAQ ACCORDION
+   ============================================================ */
+(function() {
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-btn');
+    const content = item.querySelector('.faq-content');
+    const icon = item.querySelector('.faq-icon');
+    if (!btn || !content) return;
+    btn.addEventListener('click', () => {
+      const open = !content.classList.contains('hidden');
+      content.classList.toggle('hidden', open);
+      if (icon) icon.textContent = open ? '+' : '−';
+    });
+  });
+})();
+
+
+/* ============================================================
+   CONTACT FORM → WHATSAPP
+   ============================================================ */
+(function() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  const WA_NUMBER = '237693149222';
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const name = (data.get('name') || '').trim();
+    const phone = (data.get('phone') || '').trim();
+    const type = (data.get('type') || '').trim();
+    const pack = (data.get('pack') || '').trim();
+    const msg = (data.get('msg') || '').trim();
+
+    const L = currentLang === 'fr';
+    const lines = L
+      ? ['Bonjour 237WebStudio 👋','',`*Nom :* ${name}`,`*WhatsApp :* ${phone}`,`*Activité :* ${type}`,`*Formule :* ${pack}`, msg ? `\n*Détails :*\n${msg}` : '']
+      : ['Hello 237WebStudio 👋','',`*Name:* ${name}`,`*WhatsApp:* ${phone}`,`*Business:* ${type}`,`*Package:* ${pack}`, msg ? `\n*Details:*\n${msg}` : ''];
+
+    const text = lines.filter(Boolean).join('\n');
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+  });
+})();
+
+
+/* ============================================================
+   SCROLL PROGRESS BAR
+   ============================================================ */
+(function() {
+  const bar = document.getElementById('scroll-progress');
+  if (!bar) return;
+  let ticking = false;
+  const update = () => {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+  update();
+})();
+
+
+/* ============================================================
+   REVEAL ANIMATIONS + COUNTERS + BACK TO TOP
+   Runs deferred so first paint is instant
+   ============================================================ */
+function deferWork(fn) {
+  if ('requestIdleCallback' in window) requestIdleCallback(fn, { timeout: 500 });
+  else setTimeout(fn, 1);
+}
+
+deferWork(() => {
+  // Reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  // Counters
+  const counters = document.querySelectorAll('[data-count]');
+  if (counters.length && 'IntersectionObserver' in window) {
+    const run = el => {
+      const target = parseInt(el.dataset.count, 10) || 0;
+      const dur = 1400;
+      const start = performance.now();
+      const step = now => {
+        const p = Math.min((now - start) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased);
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    const cio = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { run(e.target); cio.unobserve(e.target); }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => cio.observe(c));
+  }
+
+  // Back to top
+  const backTop = document.getElementById('back-top');
+  if (backTop) {
+    let ticking = false;
+    const update = () => {
+      backTop.classList.toggle('hidden', window.scrollY <= 700);
+      backTop.classList.toggle('grid', window.scrollY > 700);
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    update();
+  }
+
+  // Year in footer
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+});
+
+
+/* ============================================================
+   INIT
+   ============================================================ */
+applyLang(getSavedLang());
+</script>
+
+</body>
+</html>

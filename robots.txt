@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://237webstudio.vercel.app/sitemap.xml
